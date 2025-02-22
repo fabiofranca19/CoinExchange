@@ -7,11 +7,14 @@ protocol Navigating {
 
 final class AppCoordinator: Navigating {
     private weak var navigationController: UINavigationController?
+    private let container: DependencyInjecting
     
     init(
-        navigationController: UINavigationController
+        _ navigationController: UINavigationController,
+        _ container: DependencyInjecting
     ) {
         self.navigationController = navigationController
+        self.container = container
     }
     
     func pushViewController(_ viewController: UIViewController, animated: Bool) {

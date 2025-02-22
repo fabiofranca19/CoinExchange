@@ -15,6 +15,10 @@
 		E63E4B2B2D6A672A0071E888 /* CoinExchangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B2A2D6A672A0071E888 /* CoinExchangeUITests.swift */; };
 		E63E4B2D2D6A672A0071E888 /* CoinExchangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B2C2D6A672A0071E888 /* CoinExchangeUITestsLaunchTests.swift */; };
 		E63E4B3B2D6A69B60071E888 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B3A2D6A69B60071E888 /* AppCoordinator.swift */; };
+		E63E4B412D6A7BB10071E888 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B402D6A7BB10071E888 /* DependencyContainer.swift */; };
+		E63E4B442D6A7CFE0071E888 /* Servicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B432D6A7CFE0071E888 /* Servicing.swift */; };
+		E63E4B462D6A7D4E0071E888 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B452D6A7D4E0071E888 /* ApiEndpoint.swift */; };
+		E63E4B492D6A85800071E888 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B482D6A85800071E888 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		E63E4B2A2D6A672A0071E888 /* CoinExchangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinExchangeUITests.swift; sourceTree = "<group>"; };
 		E63E4B2C2D6A672A0071E888 /* CoinExchangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinExchangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E63E4B3A2D6A69B60071E888 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E63E4B402D6A7BB10071E888 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		E63E4B432D6A7CFE0071E888 /* Servicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicing.swift; sourceTree = "<group>"; };
+		E63E4B452D6A7D4E0071E888 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		E63E4B482D6A85800071E888 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,8 @@
 		E63E4B082D6A67290071E888 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				E63E4B422D6A7CF30071E888 /* Services */,
+				E63E4B3D2D6A6D550071E888 /* Dependency */,
 				E63E4B3C2D6A6BAD0071E888 /* Resources */,
 				E63E4B392D6A68DE0071E888 /* SupportingFiles */,
 				E63E4B092D6A67290071E888 /* AppDelegate.swift */,
@@ -138,6 +148,32 @@
 				E63E4B142D6A672A0071E888 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E63E4B3D2D6A6D550071E888 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B402D6A7BB10071E888 /* DependencyContainer.swift */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		E63E4B422D6A7CF30071E888 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B472D6A85560071E888 /* Protocols */,
+				E63E4B482D6A85800071E888 /* Service.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E63E4B472D6A85560071E888 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B432D6A7CFE0071E888 /* Servicing.swift */,
+				E63E4B452D6A7D4E0071E888 /* ApiEndpoint.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +307,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E63E4B3B2D6A69B60071E888 /* AppCoordinator.swift in Sources */,
+				E63E4B492D6A85800071E888 /* Service.swift in Sources */,
+				E63E4B412D6A7BB10071E888 /* DependencyContainer.swift in Sources */,
+				E63E4B442D6A7CFE0071E888 /* Servicing.swift in Sources */,
+				E63E4B462D6A7D4E0071E888 /* ApiEndpoint.swift in Sources */,
 				E63E4B0A2D6A67290071E888 /* AppDelegate.swift in Sources */,
 				E63E4B0C2D6A67290071E888 /* SceneDelegate.swift in Sources */,
 			);

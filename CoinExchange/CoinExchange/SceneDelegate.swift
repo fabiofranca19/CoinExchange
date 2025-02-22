@@ -10,8 +10,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
         
+        let container = DependencyContainer()
+        container.register(Servicing.self) {
+            Service()
+        }
+        
         let appCoordinator = AppCoordinator(
-            navigationController: navigationController
+            navigationController,
+            container
         )
         appCoordinator.start()
         
