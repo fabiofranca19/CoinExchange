@@ -1,6 +1,6 @@
 import UIKit
 
-protocol Navigating {
+public protocol Navigating {
     func pushViewController(_ viewController: UIViewController, animated: Bool)
     func popViewController(animated: Bool)
 }
@@ -26,6 +26,10 @@ final class AppCoordinator: Navigating {
     }
     
     func start() {
-        navigationController?.setViewControllers([UIViewController()], animated: true)
+        let exchangeListController = ExchangeListFactory.make(
+            navigation: self,
+            container
+        )
+        navigationController?.setViewControllers([exchangeListController], animated: false)
     }
 }

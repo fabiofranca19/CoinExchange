@@ -19,6 +19,14 @@
 		E63E4B442D6A7CFE0071E888 /* Servicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B432D6A7CFE0071E888 /* Servicing.swift */; };
 		E63E4B462D6A7D4E0071E888 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B452D6A7D4E0071E888 /* ApiEndpoint.swift */; };
 		E63E4B492D6A85800071E888 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B482D6A85800071E888 /* Service.swift */; };
+		E63E4B4D2D6A8AFF0071E888 /* ExchangeListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B4C2D6A8AFF0071E888 /* ExchangeListService.swift */; };
+		E63E4B4F2D6A8B0A0071E888 /* ExchangeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B4E2D6A8B0A0071E888 /* ExchangeListInteractor.swift */; };
+		E63E4B512D6A8B1D0071E888 /* ExchangeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B502D6A8B1D0071E888 /* ExchangeListPresenter.swift */; };
+		E63E4B532D6A8B2B0071E888 /* ExchangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B522D6A8B2B0071E888 /* ExchangeListViewController.swift */; };
+		E63E4B552D6A8B430071E888 /* ExchangeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B542D6A8B430071E888 /* ExchangeListCoordinator.swift */; };
+		E63E4B572D6A8B4C0071E888 /* ExchangeListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B562D6A8B4C0071E888 /* ExchangeListFactory.swift */; };
+		E63E4B5C2D6A916E0071E888 /* ExchangeListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B5B2D6A916E0071E888 /* ExchangeListEndpoint.swift */; };
+		E63E4B5F2D6A94F20071E888 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B5E2D6A94F20071E888 /* Exchange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,14 @@
 		E63E4B432D6A7CFE0071E888 /* Servicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicing.swift; sourceTree = "<group>"; };
 		E63E4B452D6A7D4E0071E888 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		E63E4B482D6A85800071E888 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E63E4B4C2D6A8AFF0071E888 /* ExchangeListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListService.swift; sourceTree = "<group>"; };
+		E63E4B4E2D6A8B0A0071E888 /* ExchangeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListInteractor.swift; sourceTree = "<group>"; };
+		E63E4B502D6A8B1D0071E888 /* ExchangeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListPresenter.swift; sourceTree = "<group>"; };
+		E63E4B522D6A8B2B0071E888 /* ExchangeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListViewController.swift; sourceTree = "<group>"; };
+		E63E4B542D6A8B430071E888 /* ExchangeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListCoordinator.swift; sourceTree = "<group>"; };
+		E63E4B562D6A8B4C0071E888 /* ExchangeListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListFactory.swift; sourceTree = "<group>"; };
+		E63E4B5B2D6A916E0071E888 /* ExchangeListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListEndpoint.swift; sourceTree = "<group>"; };
+		E63E4B5E2D6A94F20071E888 /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +121,7 @@
 		E63E4B082D6A67290071E888 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				E63E4B4A2D6A8AD30071E888 /* Modules */,
 				E63E4B422D6A7CF30071E888 /* Services */,
 				E63E4B3D2D6A6D550071E888 /* Dependency */,
 				E63E4B3C2D6A6BAD0071E888 /* Resources */,
@@ -174,6 +191,45 @@
 				E63E4B452D6A7D4E0071E888 /* ApiEndpoint.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E63E4B4A2D6A8AD30071E888 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B4B2D6A8ADE0071E888 /* ExchangeList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E63E4B4B2D6A8ADE0071E888 /* ExchangeList */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B5D2D6A94EB0071E888 /* Model */,
+				E63E4B5A2D6A91020071E888 /* Service */,
+				E63E4B4E2D6A8B0A0071E888 /* ExchangeListInteractor.swift */,
+				E63E4B502D6A8B1D0071E888 /* ExchangeListPresenter.swift */,
+				E63E4B522D6A8B2B0071E888 /* ExchangeListViewController.swift */,
+				E63E4B542D6A8B430071E888 /* ExchangeListCoordinator.swift */,
+				E63E4B562D6A8B4C0071E888 /* ExchangeListFactory.swift */,
+			);
+			path = ExchangeList;
+			sourceTree = "<group>";
+		};
+		E63E4B5A2D6A91020071E888 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B4C2D6A8AFF0071E888 /* ExchangeListService.swift */,
+				E63E4B5B2D6A916E0071E888 /* ExchangeListEndpoint.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E63E4B5D2D6A94EB0071E888 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B5E2D6A94F20071E888 /* Exchange.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,12 +363,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E63E4B3B2D6A69B60071E888 /* AppCoordinator.swift in Sources */,
+				E63E4B532D6A8B2B0071E888 /* ExchangeListViewController.swift in Sources */,
 				E63E4B492D6A85800071E888 /* Service.swift in Sources */,
 				E63E4B412D6A7BB10071E888 /* DependencyContainer.swift in Sources */,
+				E63E4B512D6A8B1D0071E888 /* ExchangeListPresenter.swift in Sources */,
 				E63E4B442D6A7CFE0071E888 /* Servicing.swift in Sources */,
+				E63E4B4D2D6A8AFF0071E888 /* ExchangeListService.swift in Sources */,
+				E63E4B4F2D6A8B0A0071E888 /* ExchangeListInteractor.swift in Sources */,
+				E63E4B5F2D6A94F20071E888 /* Exchange.swift in Sources */,
 				E63E4B462D6A7D4E0071E888 /* ApiEndpoint.swift in Sources */,
 				E63E4B0A2D6A67290071E888 /* AppDelegate.swift in Sources */,
+				E63E4B572D6A8B4C0071E888 /* ExchangeListFactory.swift in Sources */,
+				E63E4B5C2D6A916E0071E888 /* ExchangeListEndpoint.swift in Sources */,
 				E63E4B0C2D6A67290071E888 /* SceneDelegate.swift in Sources */,
+				E63E4B552D6A8B430071E888 /* ExchangeListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
