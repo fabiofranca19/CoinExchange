@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9E72FF112D6AA6D60080CA74 /* ExchangeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF102D6AA6D50080CA74 /* ExchangeIcon.swift */; };
-		9E72FF162D6B4ECA0080CA74 /* ExchangeListViewDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF152D6B4EC20080CA74 /* ExchangeListViewDTO.swift */; };
 		9E72FF1B2D6B61B90080CA74 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF1A2D6B61B30080CA74 /* DesignSystem.swift */; };
 		9E72FF1E2D6B62740080CA74 /* DSColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF1D2D6B626C0080CA74 /* DSColorPalette.swift */; };
 		9E72FF202D6B630E0080CA74 /* DSTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF1F2D6B63020080CA74 /* DSTypography.swift */; };
@@ -38,6 +37,9 @@
 		E63E4B572D6A8B4C0071E888 /* ExchangeListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B562D6A8B4C0071E888 /* ExchangeListFactory.swift */; };
 		E63E4B5C2D6A916E0071E888 /* ExchangeListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B5B2D6A916E0071E888 /* ExchangeListEndpoint.swift */; };
 		E63E4B5F2D6A94F20071E888 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B5E2D6A94F20071E888 /* Exchange.swift */; };
+		E63E4B632D6C071B0071E888 /* DSExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B622D6C071B0071E888 /* DSExchangeCell.swift */; };
+		E63E4B652D6CA17D0071E888 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B642D6CA17D0071E888 /* ViewCode.swift */; };
+		E63E4B682D6CA2F10071E888 /* DSExchangeCellDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B672D6CA2F10071E888 /* DSExchangeCellDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,6 @@
 
 /* Begin PBXFileReference section */
 		9E72FF102D6AA6D50080CA74 /* ExchangeIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeIcon.swift; sourceTree = "<group>"; };
-		9E72FF152D6B4EC20080CA74 /* ExchangeListViewDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListViewDTO.swift; sourceTree = "<group>"; };
 		9E72FF1A2D6B61B30080CA74 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		9E72FF1D2D6B626C0080CA74 /* DSColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColorPalette.swift; sourceTree = "<group>"; };
 		9E72FF1F2D6B63020080CA74 /* DSTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTypography.swift; sourceTree = "<group>"; };
@@ -93,6 +94,9 @@
 		E63E4B562D6A8B4C0071E888 /* ExchangeListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListFactory.swift; sourceTree = "<group>"; };
 		E63E4B5B2D6A916E0071E888 /* ExchangeListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListEndpoint.swift; sourceTree = "<group>"; };
 		E63E4B5E2D6A94F20071E888 /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
+		E63E4B622D6C071B0071E888 /* DSExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSExchangeCell.swift; sourceTree = "<group>"; };
+		E63E4B642D6CA17D0071E888 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		E63E4B672D6CA2F10071E888 /* DSExchangeCellDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSExchangeCellDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,18 +124,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9E72FF122D6AA7730080CA74 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9E72FF152D6B4EC20080CA74 /* ExchangeListViewDTO.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		9E72FF172D6B5FFC0080CA74 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				9E72FF322D6C00C40080CA74 /* Components */,
+				E63E4B612D6C05BB0071E888 /* Components */,
 				9E72FF232D6BEEDA0080CA74 /* DarkDSColorPalette */,
 				9E72FF1C2D6B625E0080CA74 /* Protocols */,
 			);
@@ -164,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9E72FF2B2D6BF36B0080CA74 /* Extensions */,
+				E63E4B642D6CA17D0071E888 /* ViewCode.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -174,13 +171,6 @@
 				9E72FF2C2D6BF37B0080CA74 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		9E72FF322D6C00C40080CA74 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		E63E4AFD2D6A67290071E888 = {
@@ -291,7 +281,6 @@
 		E63E4B4B2D6A8ADE0071E888 /* ExchangeList */ = {
 			isa = PBXGroup;
 			children = (
-				9E72FF122D6AA7730080CA74 /* View */,
 				E63E4B5D2D6A94EB0071E888 /* Model */,
 				E63E4B5A2D6A91020071E888 /* Service */,
 				E63E4B4E2D6A8B0A0071E888 /* ExchangeListInteractor.swift */,
@@ -319,6 +308,23 @@
 				E63E4B5E2D6A94F20071E888 /* Exchange.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E63E4B612D6C05BB0071E888 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B662D6CA2D40071E888 /* DSExchangeCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E63E4B662D6CA2D40071E888 /* DSExchangeCell */ = {
+			isa = PBXGroup;
+			children = (
+				E63E4B622D6C071B0071E888 /* DSExchangeCell.swift */,
+				E63E4B672D6CA2F10071E888 /* DSExchangeCellDTO.swift */,
+			);
+			path = DSExchangeCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,15 +460,18 @@
 				9E72FF292D6BF1B70080CA74 /* DarkDSColorPalette.swift in Sources */,
 				E63E4B3B2D6A69B60071E888 /* AppCoordinator.swift in Sources */,
 				E63E4B532D6A8B2B0071E888 /* ExchangeListViewController.swift in Sources */,
+				E63E4B652D6CA17D0071E888 /* ViewCode.swift in Sources */,
 				E63E4B492D6A85800071E888 /* Service.swift in Sources */,
 				9E72FF2F2D6BFA900080CA74 /* DarkDesignSystem.swift in Sources */,
 				E63E4B412D6A7BB10071E888 /* DependencyContainer.swift in Sources */,
 				9E72FF222D6B64110080CA74 /* DSSpacing.swift in Sources */,
 				E63E4B512D6A8B1D0071E888 /* ExchangeListPresenter.swift in Sources */,
+				E63E4B632D6C071B0071E888 /* DSExchangeCell.swift in Sources */,
 				E63E4B442D6A7CFE0071E888 /* Servicing.swift in Sources */,
 				9E72FF272D6BF1630080CA74 /* DarkDSSpacing.swift in Sources */,
 				9E72FF2D2D6BF3B00080CA74 /* UIColor+Extension.swift in Sources */,
 				E63E4B4D2D6A8AFF0071E888 /* ExchangeListService.swift in Sources */,
+				E63E4B682D6CA2F10071E888 /* DSExchangeCellDTO.swift in Sources */,
 				E63E4B4F2D6A8B0A0071E888 /* ExchangeListInteractor.swift in Sources */,
 				E63E4B5F2D6A94F20071E888 /* Exchange.swift in Sources */,
 				9E72FF112D6AA6D60080CA74 /* ExchangeIcon.swift in Sources */,
@@ -475,7 +484,6 @@
 				E63E4B0C2D6A67290071E888 /* SceneDelegate.swift in Sources */,
 				9E72FF1E2D6B62740080CA74 /* DSColorPalette.swift in Sources */,
 				9E72FF202D6B630E0080CA74 /* DSTypography.swift in Sources */,
-				9E72FF162D6B4ECA0080CA74 /* ExchangeListViewDTO.swift in Sources */,
 				E63E4B552D6A8B430071E888 /* ExchangeListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
