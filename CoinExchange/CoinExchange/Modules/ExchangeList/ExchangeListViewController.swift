@@ -2,6 +2,7 @@ import UIKit
 
 public protocol ExchangeListDisplaying: AnyObject {
     func displayExchanges(_ exchanges: [Exchange])
+    func displayExchanges(_ icons: [ExchangeIcon])
 }
 
 public final class ExchangeListViewController: UIViewController {
@@ -18,12 +19,16 @@ public final class ExchangeListViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.fetchExchanges()
+        interactor.loadData()
     }
 }
 
 extension ExchangeListViewController: ExchangeListDisplaying {
     public func displayExchanges(_ exchanges: [Exchange]) {
         print(exchanges)
+    }
+    
+    public func displayExchanges(_ icons: [ExchangeIcon]) {
+        print(icons)
     }
 }

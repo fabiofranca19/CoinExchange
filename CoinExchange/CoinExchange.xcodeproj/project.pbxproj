@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E72FF112D6AA6D60080CA74 /* ExchangeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF102D6AA6D50080CA74 /* ExchangeIcon.swift */; };
+		9E72FF162D6B4ECA0080CA74 /* ExchangeListViewDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF152D6B4EC20080CA74 /* ExchangeListViewDTO.swift */; };
+		9E72FF1B2D6B61B90080CA74 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF1A2D6B61B30080CA74 /* DesignSystem.swift */; };
+		9E72FF1E2D6B62740080CA74 /* DSColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF1D2D6B626C0080CA74 /* DSColorPalette.swift */; };
+		9E72FF202D6B630E0080CA74 /* DSTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF1F2D6B63020080CA74 /* DSTypography.swift */; };
+		9E72FF222D6B64110080CA74 /* DSSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF212D6B640B0080CA74 /* DSSpacing.swift */; };
+		9E72FF252D6BF0D90080CA74 /* DarkDSTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF242D6BF0D90080CA74 /* DarkDSTypography.swift */; };
+		9E72FF272D6BF1630080CA74 /* DarkDSSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF262D6BF1620080CA74 /* DarkDSSpacing.swift */; };
+		9E72FF292D6BF1B70080CA74 /* DarkDSColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF282D6BF1B70080CA74 /* DarkDSColorPalette.swift */; };
+		9E72FF2D2D6BF3B00080CA74 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF2C2D6BF37B0080CA74 /* UIColor+Extension.swift */; };
+		9E72FF2F2D6BFA900080CA74 /* DarkDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF2E2D6BFA820080CA74 /* DarkDesignSystem.swift */; };
 		E63E4B0A2D6A67290071E888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B092D6A67290071E888 /* AppDelegate.swift */; };
 		E63E4B0C2D6A67290071E888 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B0B2D6A67290071E888 /* SceneDelegate.swift */; };
 		E63E4B132D6A672A0071E888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63E4B122D6A672A0071E888 /* Assets.xcassets */; };
@@ -47,6 +58,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E72FF102D6AA6D50080CA74 /* ExchangeIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeIcon.swift; sourceTree = "<group>"; };
+		9E72FF152D6B4EC20080CA74 /* ExchangeListViewDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListViewDTO.swift; sourceTree = "<group>"; };
+		9E72FF1A2D6B61B30080CA74 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		9E72FF1D2D6B626C0080CA74 /* DSColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColorPalette.swift; sourceTree = "<group>"; };
+		9E72FF1F2D6B63020080CA74 /* DSTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTypography.swift; sourceTree = "<group>"; };
+		9E72FF212D6B640B0080CA74 /* DSSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSpacing.swift; sourceTree = "<group>"; };
+		9E72FF242D6BF0D90080CA74 /* DarkDSTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkDSTypography.swift; sourceTree = "<group>"; };
+		9E72FF262D6BF1620080CA74 /* DarkDSSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkDSSpacing.swift; sourceTree = "<group>"; };
+		9E72FF282D6BF1B70080CA74 /* DarkDSColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkDSColorPalette.swift; sourceTree = "<group>"; };
+		9E72FF2C2D6BF37B0080CA74 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		9E72FF2E2D6BFA820080CA74 /* DarkDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkDesignSystem.swift; sourceTree = "<group>"; };
 		E63E4B062D6A67290071E888 /* CoinExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63E4B092D6A67290071E888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E63E4B0B2D6A67290071E888 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +120,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E72FF122D6AA7730080CA74 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E72FF152D6B4EC20080CA74 /* ExchangeListViewDTO.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9E72FF172D6B5FFC0080CA74 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				9E72FF322D6C00C40080CA74 /* Components */,
+				9E72FF232D6BEEDA0080CA74 /* DarkDSColorPalette */,
+				9E72FF1C2D6B625E0080CA74 /* Protocols */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		9E72FF1C2D6B625E0080CA74 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9E72FF212D6B640B0080CA74 /* DSSpacing.swift */,
+				9E72FF1F2D6B63020080CA74 /* DSTypography.swift */,
+				9E72FF1D2D6B626C0080CA74 /* DSColorPalette.swift */,
+				9E72FF1A2D6B61B30080CA74 /* DesignSystem.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9E72FF232D6BEEDA0080CA74 /* DarkDSColorPalette */ = {
+			isa = PBXGroup;
+			children = (
+				9E72FF2E2D6BFA820080CA74 /* DarkDesignSystem.swift */,
+				9E72FF282D6BF1B70080CA74 /* DarkDSColorPalette.swift */,
+				9E72FF262D6BF1620080CA74 /* DarkDSSpacing.swift */,
+				9E72FF242D6BF0D90080CA74 /* DarkDSTypography.swift */,
+			);
+			path = DarkDSColorPalette;
+			sourceTree = "<group>";
+		};
+		9E72FF2A2D6BF35D0080CA74 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9E72FF2B2D6BF36B0080CA74 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9E72FF2B2D6BF36B0080CA74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E72FF2C2D6BF37B0080CA74 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9E72FF322D6C00C40080CA74 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E63E4AFD2D6A67290071E888 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +206,8 @@
 		E63E4B082D6A67290071E888 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				9E72FF2A2D6BF35D0080CA74 /* Utils */,
+				9E72FF172D6B5FFC0080CA74 /* DesignSystem */,
 				E63E4B4A2D6A8AD30071E888 /* Modules */,
 				E63E4B422D6A7CF30071E888 /* Services */,
 				E63E4B3D2D6A6D550071E888 /* Dependency */,
@@ -204,6 +291,7 @@
 		E63E4B4B2D6A8ADE0071E888 /* ExchangeList */ = {
 			isa = PBXGroup;
 			children = (
+				9E72FF122D6AA7730080CA74 /* View */,
 				E63E4B5D2D6A94EB0071E888 /* Model */,
 				E63E4B5A2D6A91020071E888 /* Service */,
 				E63E4B4E2D6A8B0A0071E888 /* ExchangeListInteractor.swift */,
@@ -227,6 +315,7 @@
 		E63E4B5D2D6A94EB0071E888 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9E72FF102D6AA6D50080CA74 /* ExchangeIcon.swift */,
 				E63E4B5E2D6A94F20071E888 /* Exchange.swift */,
 			);
 			path = Model;
@@ -362,20 +451,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E72FF292D6BF1B70080CA74 /* DarkDSColorPalette.swift in Sources */,
 				E63E4B3B2D6A69B60071E888 /* AppCoordinator.swift in Sources */,
 				E63E4B532D6A8B2B0071E888 /* ExchangeListViewController.swift in Sources */,
 				E63E4B492D6A85800071E888 /* Service.swift in Sources */,
+				9E72FF2F2D6BFA900080CA74 /* DarkDesignSystem.swift in Sources */,
 				E63E4B412D6A7BB10071E888 /* DependencyContainer.swift in Sources */,
+				9E72FF222D6B64110080CA74 /* DSSpacing.swift in Sources */,
 				E63E4B512D6A8B1D0071E888 /* ExchangeListPresenter.swift in Sources */,
 				E63E4B442D6A7CFE0071E888 /* Servicing.swift in Sources */,
+				9E72FF272D6BF1630080CA74 /* DarkDSSpacing.swift in Sources */,
+				9E72FF2D2D6BF3B00080CA74 /* UIColor+Extension.swift in Sources */,
 				E63E4B4D2D6A8AFF0071E888 /* ExchangeListService.swift in Sources */,
 				E63E4B4F2D6A8B0A0071E888 /* ExchangeListInteractor.swift in Sources */,
 				E63E4B5F2D6A94F20071E888 /* Exchange.swift in Sources */,
+				9E72FF112D6AA6D60080CA74 /* ExchangeIcon.swift in Sources */,
 				E63E4B462D6A7D4E0071E888 /* ApiEndpoint.swift in Sources */,
 				E63E4B0A2D6A67290071E888 /* AppDelegate.swift in Sources */,
+				9E72FF1B2D6B61B90080CA74 /* DesignSystem.swift in Sources */,
 				E63E4B572D6A8B4C0071E888 /* ExchangeListFactory.swift in Sources */,
+				9E72FF252D6BF0D90080CA74 /* DarkDSTypography.swift in Sources */,
 				E63E4B5C2D6A916E0071E888 /* ExchangeListEndpoint.swift in Sources */,
 				E63E4B0C2D6A67290071E888 /* SceneDelegate.swift in Sources */,
+				9E72FF1E2D6B62740080CA74 /* DSColorPalette.swift in Sources */,
+				9E72FF202D6B630E0080CA74 /* DSTypography.swift in Sources */,
+				9E72FF162D6B4ECA0080CA74 /* ExchangeListViewDTO.swift in Sources */,
 				E63E4B552D6A8B430071E888 /* ExchangeListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

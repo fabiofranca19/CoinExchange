@@ -2,15 +2,18 @@ import Foundation
 
 public enum ExchangeListEndpoint: ApiEndpoint {
     case exchanges
+    case logos
     
     public var baseURL: URL {
-        return URL(string: "https://rest.coinapi.io")!
+        return URL(string: "https://rest.coinapi.io/v1")!
     }
     
     public var path: String {
         switch self {
         case .exchanges:
-            return "/v1/exchanges"
+            return "/exchanges"
+        case .logos:
+            return "/exchanges/icons/45"
         }
     }
     

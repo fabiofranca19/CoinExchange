@@ -2,6 +2,7 @@ import Foundation
 
 public protocol ExchangeListPresenting: AnyObject {
     func presentExchanges(exchanges: [Exchange])
+    func presentExchanges(icons: [ExchangeIcon])
     func goToExchangeDetail()
 }
 
@@ -17,7 +18,11 @@ public final class ExchangeListPresenter: ExchangeListPresenting {
         controller?.displayExchanges(exchanges)
     }
     
-    public func goToExchangeDetail() {
+    public func presentExchanges(icons: [ExchangeIcon]) {
         
+    }
+    
+    public func goToExchangeDetail() {
+          
     }
 }

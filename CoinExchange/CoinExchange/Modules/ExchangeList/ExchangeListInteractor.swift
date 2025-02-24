@@ -1,7 +1,8 @@
 import Foundation
 
 public protocol ExchangeListInteracting: AnyObject {
-    func fetchExchanges()
+    func loadData()
+    
 }
 
 public final class ExchangeListInteractor: ExchangeListInteracting {
@@ -13,13 +14,28 @@ public final class ExchangeListInteractor: ExchangeListInteracting {
         self.service = service
     }
     
-    public func fetchExchanges() {
+    public func loadData() {
+        
+    }
+    
+    private func fetchExchanges() {
         service.fetchExchanges { [weak self] result in
             switch result {
             case let .success(model):
                 self?.presenter.presentExchanges(exchanges: model)
-            case .failure(_):
-                break
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+    
+    private func fetchExchangesIcons() {
+        service.fetchExchangesIcons { [weak self] result in
+            switch result {
+            case let .success(model):
+                self?.presenter.presentExchanges(icons: model)
+            case let .failure(error):
+                print(error)
             }
         }
     }
