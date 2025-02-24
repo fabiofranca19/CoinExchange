@@ -1,7 +1,7 @@
 import Foundation
 
 public struct Exchange: Codable {
-    let name: String?
+    let name: String
     let exchangeId: String
     let volume1DayUsd: Double
     

@@ -1,10 +1,12 @@
 import UIKit
 
-public protocol DSExchangeCellDisplaying: AnyObject {
+public protocol DSExchangeCellDisplaying: UITableViewCell {
     func updateCell(_ dto: DSExchangeCellDTO)
 }
 
 public final class DSExchangeCell: UITableViewCell {
+    static let identifier = "DSExchangeCellIdentifier"
+    
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit

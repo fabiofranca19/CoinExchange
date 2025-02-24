@@ -15,6 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             Service()
         }
         
+        container.register(DesignSystem.self) {
+            DarkDesignSystem()
+        }
+        
         let appCoordinator = AppCoordinator(
             navigationController,
             container
