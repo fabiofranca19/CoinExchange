@@ -10,6 +10,9 @@ public final class ExchangeListInteractor: ExchangeListInteracting {
     private let service: ExchangeListServicing
     private let container: DependencyInjecting
     
+    private var exchanges: [Exchange] = []
+    private var exchangesIcons: [String: String] = [:]
+    
     init(
         presenter: ExchangeListPresenting,
         service: ExchangeListServicing,
@@ -21,32 +24,50 @@ public final class ExchangeListInteractor: ExchangeListInteracting {
     }
     
     public func loadData() {
-        let designSystem = container.resolve(DesignSystem.self)
-        fetchExchanges(designSystem)
-    }
-    
-    private func fetchExchanges(_ designSystem: DesignSystem) {
-        service.fetchExchanges { [weak self] result in
+        presenter.presentLoading()
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        fetchExchanges { [weak self] result in
+            defer { dispatchGroup.leave() }
             switch result {
             case let .success(model):
-                self?.presenter.presentExchanges(
-                    exchanges: model,
-                    designSystem: designSystem
-                )
+                self?.exchanges = model
             case let .failure(error):
-                print(error)
+                break
             }
         }
-    }
-    
-    private func fetchExchangesIcons() {
-        service.fetchExchangesIcons { [weak self] result in
+        
+        dispatchGroup.enter()
+        fetchExchangesIcons { [weak self] result in
+            defer { dispatchGroup.leave() }
             switch result {
             case let .success(model):
-                self?.presenter.presentExchanges(icons: model)
+                self?.exchangesIcons = model.reduce(into: [String: String]()) { dictionary, icon in
+                    dictionary[icon.exchangeId] = icon.url
+                }
             case let .failure(error):
-                print(error)
+                break
             }
         }
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            guard let exchanges = self?.exchanges, let icons = self?.exchangesIcons else { return }
+            self?.presenter.presentExchanges(exchanges: exchanges, icons: icons)
+            self?.presenter.hideLoading()
+        }
     }
+
+    private func fetchExchanges(completion: @escaping (Result<[Exchange], Error>) -> Void) {
+        service.fetchExchanges { result in
+            completion(result)
+        }
+    }
+
+    private func fetchExchangesIcons(completion: @escaping (Result<[ExchangeIcon], Error>) -> Void) {
+        service.fetchExchangesIcons { result in
+            completion(result)
+        }
+    }
+
 }

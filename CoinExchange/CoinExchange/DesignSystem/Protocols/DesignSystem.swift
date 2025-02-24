@@ -5,5 +5,6 @@ public protocol DesignSystem {
     var typography: DSTypography { get }
     var spacing: DSSpacing { get }
     
+    func makeLoading() -> LoadingViewDisplaying
     func makeExchangeCell(style: UITableViewCell.CellStyle) -> DSExchangeCellDisplaying
 }

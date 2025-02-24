@@ -1,8 +1,9 @@
 import Foundation
 
 public protocol ExchangeListPresenting: AnyObject {
-    func presentExchanges(exchanges: [Exchange], designSystem: DesignSystem)
-    func presentExchanges(icons: [ExchangeIcon])
+    func presentExchanges(exchanges: [Exchange], icons: [String:String])
+    func presentLoading()
+    func hideLoading()
     func goToExchangeDetail()
 }
 
@@ -14,19 +15,24 @@ public final class ExchangeListPresenter: ExchangeListPresenting {
         self.coordinator = coordinator
     }
     
-    public func presentExchanges(exchanges: [Exchange], designSystem: DesignSystem) {
-        let cells = exchanges.compactMap {
-            let dto = DSExchangeCellDTO(title: $0.name, subtitle: $0.exchangeId, value: "$ \($0.volume1DayUsd)")
-            let cell = designSystem.makeExchangeCell(style: .default)
-            cell.updateCell(dto)
-            return cell
+    public func presentExchanges(exchanges: [Exchange], icons: [String:String]) {
+        let exchangesDTO = exchanges.compactMap {
+            DSExchangeCellDTO(
+                icon: icons[$0.exchangeId] ?? "",
+                title: $0.name ?? "",
+                subtitle: $0.exchangeId,
+                value: String.formattedAsUSD(from: $0.volume1DayUsd)
+            )
         }
-        controller?.displayExchanges(cells)
-//        controller?.displayExchanges(exchanges)
+        controller?.displayExchanges(exchangesDTO)
     }
     
-    public func presentExchanges(icons: [ExchangeIcon]) {
-        
+    public func presentLoading() {
+        controller?.displayLoading()
+    }
+    
+    public func hideLoading() {
+        controller?.hideLoading()
     }
     
     public func goToExchangeDetail() {

@@ -13,7 +13,7 @@ public enum ExchangeListEndpoint: ApiEndpoint {
         case .exchanges:
             return "/exchanges"
         case .logos:
-            return "/exchanges/icons/45"
+            return "/exchanges/icons/40"
         }
     }
     

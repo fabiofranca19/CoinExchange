@@ -10,14 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
         
-        let container = DependencyContainer()
-        container.register(Servicing.self) {
-            Service()
-        }
-        
-        container.register(DesignSystem.self) {
-            DarkDesignSystem()
-        }
+        let container = makeContainer()
         
         let appCoordinator = AppCoordinator(
             navigationController,
@@ -28,6 +21,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
+    }
+    
+    private func makeContainer() -> DependencyInjecting{
+        let container = DependencyContainer()
+        
+        container.register(Servicing.self) {
+            Service()
+        }
+        
+        container.register(ImageLoading.self) {
+            ImageLoader()
+        }
+        
+        container.register(ImageCaching.self) {
+            ImageCache()
+        }
+        
+        container.register(DesignSystem.self) {
+            DarkDesignSystem()
+        }
+        
+        return container
     }
 }
 

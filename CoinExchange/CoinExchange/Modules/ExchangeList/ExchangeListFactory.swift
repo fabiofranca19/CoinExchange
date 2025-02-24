@@ -5,6 +5,10 @@ public enum ExchangeListFactory {
         navigation: Navigating,
         _ container: DependencyInjecting
     ) -> UIViewController {
+        let designSystem = container.resolve(DesignSystem.self)
+        let imageLoader = container.resolve(ImageLoading.self)
+        let imageCache = container.resolve(ImageCaching.self)
+        
         let coordinator = ExchangeListCoordinator(
             navigation: navigation,
             container: container
@@ -17,10 +21,14 @@ public enum ExchangeListFactory {
         )
         let interactor = ExchangeListInteractor(
             presenter: presenter,
-            service: service
+            service: service,
+            container: container
         )
         let controller = ExchangeListViewController(
-            interactor: interactor
+            interactor: interactor,
+            desingSystem: designSystem,
+            imageLoader: imageLoader,
+            imageCache: imageCache
         )
         
         presenter.controller = controller
