@@ -6,7 +6,7 @@ public protocol ExchangeListPresenting: AnyObject {
     func hideLoading()
     func presentError(_ message: String)
     func hideError()
-    func goToExchangeDetail(_ exchange: Exchange)
+    func goToExchangeDetail(_ exchange: Exchange, iconUrl: String)
 }
 
 public final class ExchangeListPresenter {
@@ -48,7 +48,7 @@ extension ExchangeListPresenter: ExchangeListPresenting {
         controller?.hideError()
     }
     
-    public func goToExchangeDetail(_ exchange: Exchange) {
-        coordinator.goToExchangeDetail(exchange)
+    public func goToExchangeDetail(_ exchange: Exchange, iconUrl: String) {
+        coordinator.goToExchangeDetail(exchange, iconUrl: iconUrl)
     }
 }

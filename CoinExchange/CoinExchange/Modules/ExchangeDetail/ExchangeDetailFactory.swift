@@ -4,7 +4,8 @@ enum ExchangeDetailFactory {
     static func make(
         navigation: Navigating,
         _ container: DependencyInjecting,
-        _ exchange: Exchange
+        _ exchange: Exchange,
+        _ iconUrl: String
     ) -> UIViewController {
         let designSystem = container.resolve(DesignSystem.self)
         let imageLoader = container.resolve(ImageLoading.self)
@@ -24,7 +25,9 @@ enum ExchangeDetailFactory {
         let interactor = ExchangeDetailInteractor(
             service: service,
             presenter: presenter,
-            container: container
+            container: container,
+            exchange: exchange,
+            iconUrl: iconUrl
         )
         let viewController = ExchangeDetailViewController(
             interactor: interactor,

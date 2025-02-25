@@ -17,6 +17,7 @@ public struct DSExchangeDetailDTO {
     let dataQuoteEnd: String?
     let dataTradeStart: String?
     let dataTradeEnd: String?
+    let iconUrl: String?
 }
 
 final class ExchangeDetailViewController: UIViewController {
@@ -26,22 +27,49 @@ final class ExchangeDetailViewController: UIViewController {
     private let imageCache: ImageCaching
     private var exchangeDetail: DSExchangeDetailDTO?
     
+    // Componentes da UI
+    private lazy var headerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = DSColorPalette.Dark.primary.withAlphaComponent(0.9)
+        view.layer.cornerRadius = DSSpacing.Default.space3
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 4
+        return view
+    }()
+    
+    private lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = DSSizes.Default.largeIcon / 2
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = DSColorPalette.Dark.background
+        return imageView
+    }()
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = DSTypography.Default.title
         label.textColor = DSColorPalette.Dark.textPrimary
-        label.numberOfLines = 0
+        label.numberOfLines = .zero
+        label.textAlignment = .center
         return label
     }()
     
-    private lazy var websiteButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = DSTypography.Default.body
-        button.setTitleColor(DSColorPalette.Dark.textPrimary, for: .normal)
-        button.addTarget(self, action: #selector(openWebsite), for: .touchUpInside)
-        return button
+    private lazy var detailsContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = DSColorPalette.Dark.background.withAlphaComponent(0.95)
+        view.layer.cornerRadius = 12
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.1
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 4
+        return view
     }()
     
     private lazy var detailsStackView: UIStackView = {
@@ -50,6 +78,21 @@ final class ExchangeDetailViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = DSSpacing.Default.space2
         return stackView
+    }()
+    
+    private lazy var websiteButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = DSTypography.Default.body
+        button.setTitleColor(DSColorPalette.Dark.textPrimary, for: .normal)
+        button.backgroundColor = DSColorPalette.Dark.primary
+        button.layer.cornerRadius = DSSpacing.Default.space1
+        button.addTarget(self, action: #selector(openWebsite), for: .touchUpInside)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.2
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowRadius = 4
+        return button
     }()
     
     init(
@@ -73,6 +116,8 @@ final class ExchangeDetailViewController: UIViewController {
         super.viewDidLoad()
         interactor.loadData()
         buildView()
+        detailsContainer.alpha = 0
+        websiteButton.alpha = 0
     }
     
     @objc private func openWebsite() {
@@ -87,6 +132,7 @@ extension ExchangeDetailViewController: ExchangeDetailDisplaying {
         DispatchQueue.main.async { [weak self] in
             self?.exchangeDetail = detail
             self?.updateUI(with: detail)
+            self?.animateUI()
         }
     }
 }
@@ -94,25 +140,44 @@ extension ExchangeDetailViewController: ExchangeDetailDisplaying {
 // MARK: - ViewCode
 extension ExchangeDetailViewController: ViewCode {
     public func setupHierarchy() {
-        view.addSubview(titleLabel)
-        view.addSubview(detailsStackView)
+        view.addSubview(headerView)
+        headerView.addSubview(logoImageView)
+        headerView.addSubview(titleLabel)
+        view.addSubview(detailsContainer)
+        detailsContainer.addSubview(detailsStackView)
         view.addSubview(websiteButton)
     }
     
     public func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: DSSpacing.Default.space3),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: DSSpacing.Default.space3),
-            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -DSSpacing.Default.space3),
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: DSSpacing.Default.space3),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: DSSpacing.Default.space3),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -DSSpacing.Default.space3),
             
-            detailsStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: DSSpacing.Default.space3),
-            detailsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: DSSpacing.Default.space3),
-            detailsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -DSSpacing.Default.space3),
+            logoImageView.topAnchor.constraint(equalTo: headerView.topAnchor, constant: DSSpacing.Default.space3),
+            logoImageView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            logoImageView.widthAnchor.constraint(equalToConstant: DSSizes.Default.largeIcon),
+            logoImageView.heightAnchor.constraint(equalToConstant: DSSizes.Default.largeIcon),
             
-            websiteButton.topAnchor.constraint(equalTo: detailsStackView.bottomAnchor, constant: DSSpacing.Default.space3),
+            titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: DSSpacing.Default.space2),
+            titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: DSSpacing.Default.space3),
+            titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -DSSpacing.Default.space3),
+            titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -DSSpacing.Default.space3),
+            
+            detailsContainer.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: DSSpacing.Default.space3),
+            detailsContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: DSSpacing.Default.space3),
+            detailsContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -DSSpacing.Default.space3),
+            detailsContainer.bottomAnchor.constraint(lessThanOrEqualTo: websiteButton.topAnchor, constant: -DSSpacing.Default.space3),
+            
+            detailsStackView.topAnchor.constraint(equalTo: detailsContainer.topAnchor, constant: DSSpacing.Default.space2),
+            detailsStackView.leadingAnchor.constraint(equalTo: detailsContainer.leadingAnchor, constant: DSSpacing.Default.space2),
+            detailsStackView.trailingAnchor.constraint(equalTo: detailsContainer.trailingAnchor, constant: -DSSpacing.Default.space2),
+            detailsStackView.bottomAnchor.constraint(equalTo: detailsContainer.bottomAnchor, constant: -DSSpacing.Default.space2),
+            
             websiteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            websiteButton.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: DSSpacing.Default.space3),
-            websiteButton.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -DSSpacing.Default.space3)
+            websiteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -DSSpacing.Default.space3),
+            websiteButton.widthAnchor.constraint(equalToConstant: 200),
+            websiteButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
     
@@ -125,6 +190,12 @@ extension ExchangeDetailViewController: ViewCode {
 private extension ExchangeDetailViewController {
     func updateUI(with detail: DSExchangeDetailDTO) {
         titleLabel.text = detail.name
+        
+        if let iconUrl = detail.iconUrl {
+            imageLoader.loadImage(from: iconUrl, cache: imageCache) { [weak self] image in
+                self?.logoImageView.image = image
+            }
+        }
         
         detailsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         addDetailRow(title: "Exchange ID", value: detail.exchangeId)
@@ -154,9 +225,22 @@ private extension ExchangeDetailViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = DSTypography.Default.body
-        label.textColor = DSColorPalette.Dark.textPrimary
-        label.text = "\(title): \(value)"
-        detailsStackView.addArrangedSubview(label)
+        label.textColor = DSColorPalette.Dark.textSecondary
+        label.text = "\(title): "
+        
+        let valueLabel = UILabel()
+        valueLabel.translatesAutoresizingMaskIntoConstraints = false
+        valueLabel.font = DSTypography.Default.body
+        valueLabel.textColor = DSColorPalette.Dark.textPrimary
+        valueLabel.text = value
+        valueLabel.numberOfLines = .zero
+        
+        let stackView = UIStackView(arrangedSubviews: [label, valueLabel])
+        stackView.axis = .horizontal
+        stackView.spacing = DSSpacing.Default.space1
+        stackView.alignment = .top
+        
+        detailsStackView.addArrangedSubview(stackView)
     }
     
     func formatDate(_ dateString: String) -> String {
@@ -168,5 +252,14 @@ private extension ExchangeDetailViewController {
             return displayFormatter.string(from: date)
         }
         return dateString
+    }
+    
+    func animateUI() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+            self.detailsContainer.alpha = 1
+            self.websiteButton.alpha = 1
+            self.detailsContainer.transform = .identity
+            self.websiteButton.transform = .identity
+        }
     }
 }

@@ -1,5 +1,5 @@
 protocol ExchangeDetailPresenting: AnyObject {
-    func presentExchange(_ exchange: Exchange)
+    func presentExchange(_ exchange: Exchange, iconUrl: String)
 }
 
 final class ExchangeDetailPresenter {
@@ -13,7 +13,7 @@ final class ExchangeDetailPresenter {
 
 // MARK: - ExchangeDetailPresenting
 extension ExchangeDetailPresenter: ExchangeDetailPresenting {
-    func presentExchange(_ exchange: Exchange) {
+    func presentExchange(_ exchange: Exchange, iconUrl: String) {
         let dto = DSExchangeDetailDTO(
             name: exchange.name ?? exchange.exchangeId,
             website: exchange.website,
@@ -26,7 +26,8 @@ extension ExchangeDetailPresenter: ExchangeDetailPresenting {
             dataQuoteStart: exchange.dataQuoteStart,
             dataQuoteEnd: exchange.dataQuoteEnd,
             dataTradeStart: exchange.dataTradeStart,
-            dataTradeEnd: exchange.dataTradeEnd
+            dataTradeEnd: exchange.dataTradeEnd,
+            iconUrl: iconUrl
         )
         
         controller?.displayDetail(dto)

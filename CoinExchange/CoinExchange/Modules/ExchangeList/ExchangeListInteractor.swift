@@ -84,6 +84,7 @@ extension ExchangeListInteractor: ExchangeListInteracting {
     
     public func cellTapped(at index: Int) {
         let exchange = exchanges[index]
-        print(exchange)
+        let iconUrl = exchangesIcons[exchange.exchangeId] ?? ""
+        presenter.goToExchangeDetail(exchange, iconUrl: iconUrl)
     }
 }
