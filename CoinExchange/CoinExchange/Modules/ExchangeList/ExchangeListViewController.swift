@@ -101,6 +101,10 @@ extension ExchangeListViewController: UITableViewDataSource, UITableViewDelegate
         
         return cell
     }
+    
+    public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        imageLoader.cancelLoad(for: exchangesCells[indexPath.row].iconUrl)
+    }
 }
 
 extension ExchangeListViewController: ViewCode {

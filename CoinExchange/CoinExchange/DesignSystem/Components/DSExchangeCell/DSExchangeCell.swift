@@ -136,8 +136,9 @@ extension DSExchangeCell: DSExchangeCellDisplaying {
     }
     
     public func updateImage(_ icon: UIImage?) {
-        
-        iconImageView.image = icon
+        DispatchQueue.main.async { [weak self] in
+            self?.iconImageView.image = icon
+        }
     }
 }
 
