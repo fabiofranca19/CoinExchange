@@ -1,10 +1,6 @@
 import UIKit
 
-public struct DarkDesignSystem: DesignSystem {
-    public let colors: DSColorPalette = DarkDSColorPalette()
-    public let typography: DSTypography = DefaultDSTypography()
-    public let spacing: DSSpacing = DefaultDSSpacing()
-    
+public struct DefaultDesignSystem: DesignSystem {
     public func makeLoading() -> LoadingViewDisplaying {
         LoadingView()
     }
@@ -13,5 +9,9 @@ public struct DarkDesignSystem: DesignSystem {
         style: UITableViewCell.CellStyle
     ) -> DSExchangeCellDisplaying {
         DSExchangeCell(style: style, reuseIdentifier: nil)
+    }
+    
+    public func makeErrorView() -> any ErrorViewDisplaying {
+        ErrorView()
     }
 }

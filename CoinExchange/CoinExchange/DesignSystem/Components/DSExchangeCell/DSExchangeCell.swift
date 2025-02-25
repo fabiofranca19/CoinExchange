@@ -1,7 +1,7 @@
 import UIKit
 
 public protocol DSExchangeCellDisplaying: UITableViewCell {
-    func updateCell(_ dto: DSExchangeCellDTO, designSystem: DesignSystem)
+    func updateCell(_ dto: DSExchangeCellDTO)
     func updateImage(_ icon: UIImage?)
 }
 
@@ -18,18 +18,24 @@ public final class DSExchangeCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.font = DSTypography.Default.caption
+        label.textColor = DSColorPalette.Dark.textSecondary
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
+        label.font = DSTypography.Default.body
+        label.textColor = DSColorPalette.Dark.textPrimary
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let valueLabel: UILabel = {
         let label = UILabel()
+        label.font = DSTypography.Default.caption
+        label.textColor = DSColorPalette.Dark.textPrimary
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
         return label
@@ -38,17 +44,19 @@ public final class DSExchangeCell: UITableViewCell {
     private let textStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = DSSpacing.Default.space1
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
     private let containerView: UIView = {
         let view = UIView()
+        view.backgroundColor = DSColorPalette.Dark.primary
+        view.layer.cornerRadius = DSSpacing.Default.space2
+        view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    private var designSystem: DesignSystem?
     
     public override func prepareForReuse() {
         super.prepareForReuse()
@@ -57,8 +65,7 @@ public final class DSExchangeCell: UITableViewCell {
     }
     
     public override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
-        guard let designSystem = designSystem else { return CGSize() }
-        let targetHeight = iconImageView.frame.height + designSystem.spacing.space3 * 2
+        let targetHeight = iconImageView.frame.height + DSSpacing.Default.space3 * 2
         return CGSize(width: targetSize.width, height: targetHeight)
     }
 }
@@ -76,58 +83,34 @@ extension DSExchangeCell: ViewCode {
     }
     
     public func setupConstraints() {
-        guard let designSystem = designSystem else { return }
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
-            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: designSystem.spacing.space3),
-            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -designSystem.spacing.space3),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -designSystem.spacing.space3),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: DSSpacing.Default.space3),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -DSSpacing.Default.space3),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -DSSpacing.Default.space3),
             
-            iconImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: designSystem.spacing.space3),
-            iconImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: designSystem.spacing.space5),
-            iconImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -designSystem.spacing.space5),
-            iconImageView.widthAnchor.constraint(equalToConstant: designSystem.spacing.space4),
-            iconImageView.heightAnchor.constraint(equalToConstant: designSystem.spacing.space4),
+            iconImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: DSSpacing.Default.space3),
+            iconImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: DSSpacing.Default.space5),
+            iconImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -DSSpacing.Default.space5),
+            iconImageView.widthAnchor.constraint(equalToConstant: DSSpacing.Default.space4),
+            iconImageView.heightAnchor.constraint(equalToConstant: DSSpacing.Default.space4),
             
-            textStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: designSystem.spacing.space3),
+            textStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: DSSpacing.Default.space3),
             textStackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             
-            valueLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -designSystem.spacing.space3),
+            valueLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -DSSpacing.Default.space3),
             valueLabel.centerYAnchor.constraint(equalTo: iconImageView.centerYAnchor)
         ])
     }
     
     public func setupAdditionalConfigurations() {
-        guard let designSystem = designSystem else { return }
-        
-        contentView.backgroundColor = designSystem.colors.background
-        containerView.backgroundColor = designSystem.colors.primary
-        containerView.layer.cornerRadius = designSystem.spacing.space2
+        contentView.backgroundColor = DSColorPalette.Dark.background
         containerView.layer.masksToBounds = true
-        
-        setupLabel(
-            titleLabel,
-            font: designSystem.typography.body,
-            color: designSystem.colors.textPrimary
-        )
-        setupLabel(
-            subtitleLabel,
-            font: designSystem.typography.caption,
-            color: designSystem.colors.textSecondary
-        )
-        setupLabel(
-            valueLabel,
-            font: designSystem.typography.caption,
-            color: designSystem.colors.textPrimary
-        )
-        
-        textStackView.spacing = designSystem.spacing.space1
     }
 }
 
 extension DSExchangeCell: DSExchangeCellDisplaying {
-    public func updateCell(_ dto: DSExchangeCellDTO, designSystem: DesignSystem) {
-        self.designSystem = designSystem
+    public func updateCell(_ dto: DSExchangeCellDTO) {
         titleLabel.text = dto.title
         subtitleLabel.text = dto.subtitle
         valueLabel.text = dto.value
@@ -139,12 +122,5 @@ extension DSExchangeCell: DSExchangeCellDisplaying {
         DispatchQueue.main.async { [weak self] in
             self?.iconImageView.image = icon
         }
-    }
-}
-
-private extension DSExchangeCell {
-    func setupLabel(_ label: UILabel, font: UIFont, color: UIColor) {
-        label.font = font
-        label.textColor = color
     }
 }

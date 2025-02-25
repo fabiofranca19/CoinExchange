@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         container.register(DesignSystem.self) {
-            DarkDesignSystem()
+            DefaultDesignSystem()
         }
         
         return container

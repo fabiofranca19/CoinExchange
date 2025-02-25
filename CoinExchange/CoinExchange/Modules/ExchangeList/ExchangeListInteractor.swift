@@ -25,7 +25,10 @@ public final class ExchangeListInteractor: ExchangeListInteracting {
     
     public func loadData() {
         presenter.presentLoading()
+        presenter.hideError()
         let dispatchGroup = DispatchGroup()
+        
+        var fetchError: String?
         
         dispatchGroup.enter()
         fetchExchanges { [weak self] result in
@@ -34,7 +37,7 @@ public final class ExchangeListInteractor: ExchangeListInteracting {
             case let .success(model):
                 self?.exchanges = model
             case let .failure(error):
-                break
+                fetchError = error.localizedDescription
             }
         }
         
@@ -47,11 +50,17 @@ public final class ExchangeListInteractor: ExchangeListInteracting {
                     dictionary[icon.exchangeId] = icon.url
                 }
             case let .failure(error):
-                break
+                fetchError = error.localizedDescription
             }
         }
         
         dispatchGroup.notify(queue: .main) { [weak self] in
+            if let errorMessage = fetchError {
+                self?.presenter.presentError(errorMessage)
+                self?.presenter.hideLoading()
+                return
+            }
+            
             guard let exchanges = self?.exchanges, let icons = self?.exchangesIcons else { return }
             self?.presenter.presentExchanges(exchanges: exchanges, icons: icons)
             self?.presenter.hideLoading()

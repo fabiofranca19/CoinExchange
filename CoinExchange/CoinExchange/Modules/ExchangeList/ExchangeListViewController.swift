@@ -4,6 +4,8 @@ public protocol ExchangeListDisplaying: AnyObject {
     func displayExchanges(_ exchanges: [DSExchangeCellDTO])
     func displayLoading()
     func hideLoading()
+    func displayError(_ message: String)
+    func hideError()
 }
 
 public final class ExchangeListViewController: UIViewController {
@@ -16,9 +18,9 @@ public final class ExchangeListViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = designSystem.typography.title
+        label.font = DSTypography.Default.title
         label.text = "Exchange List"
-        label.textColor = designSystem.colors.textPrimary
+        label.textColor = DSColorPalette.Dark.textPrimary
         return label
     }()
     
@@ -26,6 +28,7 @@ public final class ExchangeListViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isUserInteractionEnabled = true
         tableView.register(DSExchangeCell.self, forCellReuseIdentifier: DSExchangeCell.identifier)
         return tableView
     }()
@@ -34,6 +37,15 @@ public final class ExchangeListViewController: UIViewController {
         let loadingView = designSystem.makeLoading()
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         return loadingView
+    }()
+    
+    private lazy var errorView: ErrorViewDisplaying = {
+        let errorView = designSystem.makeErrorView()
+        errorView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.onRetry = { [weak self] in
+            self?.interactor.loadData()
+        }
+        return errorView
     }()
     
     init(
@@ -75,6 +87,15 @@ extension ExchangeListViewController: ExchangeListDisplaying {
     public func hideLoading() {
         loadingView.stopAnimating()
     }
+    
+    public func displayError(_ message: String) {
+        self.tableView.isUserInteractionEnabled = false
+        errorView.showError(message: message, designSystem: designSystem)
+    }
+    
+    public func hideError() {
+        errorView.hideError()
+    }
 }
 
 extension ExchangeListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -91,7 +112,7 @@ extension ExchangeListViewController: UITableViewDataSource, UITableViewDelegate
             return UITableViewCell()
         }
         
-        cell.updateCell(exchangesDTO, designSystem: designSystem)
+        cell.updateCell(exchangesDTO)
         imageLoader.loadImage(
             from: exchangesDTO.iconUrl,
             cache: imageCache
@@ -112,19 +133,25 @@ extension ExchangeListViewController: ViewCode {
         view.addSubview(loadingView)
         view.addSubview(titleLabel)
         view.addSubview(tableView)
+        view.addSubview(errorView)
     }
     
     public func setupConstraints() {
         NSLayoutConstraint.activate([
+            errorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: DSSpacing.Default.space3),
+            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -DSSpacing.Default.space3),
+            
             loadingView.topAnchor.constraint(equalTo: view.topAnchor),
             loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: designSystem.spacing.space3),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: designSystem.spacing.space3),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: DSSpacing.Default.space3),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: DSSpacing.Default.space3),
             
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: designSystem.spacing.space3),
+            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: DSSpacing.Default.space3),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -132,7 +159,7 @@ extension ExchangeListViewController: ViewCode {
     }
     
     public func setupAdditionalConfigurations() {
-        view.backgroundColor = designSystem.colors.background
+        view.backgroundColor = DSColorPalette.Dark.background
     
         tableView.dataSource = self
         tableView.delegate = self
