@@ -5,7 +5,7 @@ public protocol ExchangeListServicing: AnyObject {
     func fetchExchangesIcons(completion: @escaping (Result<[ExchangeIcon], Error>) -> Void)
 }
 
-public final class ExchangeListService: ExchangeListServicing {
+public final class ExchangeListService {
     private let container: DependencyInjecting
     private let service: Servicing?
     
@@ -13,7 +13,10 @@ public final class ExchangeListService: ExchangeListServicing {
         self.container = container
         self.service = container.resolve(Servicing.self)
     }
-    
+}
+
+// MARK: - ExchangeListServicing
+extension ExchangeListService: ExchangeListServicing {
     public func fetchExchanges(completion: @escaping (Result<[Exchange], Error>) -> Void) {
         fetch(endpoint: .exchanges, completion: completion)
     }
@@ -27,3 +30,4 @@ public final class ExchangeListService: ExchangeListServicing {
         service.execute(endpoint, completion: completion)
     }
 }
+                                    

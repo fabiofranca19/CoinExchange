@@ -6,22 +6,25 @@ public protocol ExchangeListPresenting: AnyObject {
     func hideLoading()
     func presentError(_ message: String)
     func hideError()
-    func goToExchangeDetail()
+    func goToExchangeDetail(_ exchange: Exchange)
 }
 
-public final class ExchangeListPresenter: ExchangeListPresenting {
+public final class ExchangeListPresenter {
     private let coordinator: ExchangeListCoordinating
     weak var controller: ExchangeListDisplaying?
     
     init(coordinator: ExchangeListCoordinating) {
         self.coordinator = coordinator
     }
-    
+}
+
+// MARK: - ExchangeListPresenting
+extension ExchangeListPresenter: ExchangeListPresenting {
     public func presentExchanges(exchanges: [Exchange], icons: [String:String]) {
         let exchangesDTO = exchanges.compactMap {
             DSExchangeCellDTO(
                 icon: icons[$0.exchangeId] ?? "",
-                title: $0.name,
+                title: $0.name ?? "",
                 subtitle: $0.exchangeId,
                 value: String.formattedAsUSD(from: $0.volume1DayUsd)
             )
@@ -45,6 +48,7 @@ public final class ExchangeListPresenter: ExchangeListPresenting {
         controller?.hideError()
     }
     
-    public func goToExchangeDetail() {
+    public func goToExchangeDetail(_ exchange: Exchange) {
+        coordinator.goToExchangeDetail(exchange)
     }
 }

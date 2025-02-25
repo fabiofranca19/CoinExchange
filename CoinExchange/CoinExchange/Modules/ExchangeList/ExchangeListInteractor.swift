@@ -2,10 +2,10 @@ import Foundation
 
 public protocol ExchangeListInteracting: AnyObject {
     func loadData()
-    
+    func cellTapped(at index: Int)
 }
 
-public final class ExchangeListInteractor: ExchangeListInteracting {
+public final class ExchangeListInteractor {
     private let presenter: ExchangeListPresenting
     private let service: ExchangeListServicing
     private let container: DependencyInjecting
@@ -23,6 +23,21 @@ public final class ExchangeListInteractor: ExchangeListInteracting {
         self.container = container
     }
     
+    private func fetchExchanges(completion: @escaping (Result<[Exchange], Error>) -> Void) {
+        service.fetchExchanges { result in
+            completion(result)
+        }
+    }
+
+    private func fetchExchangesIcons(completion: @escaping (Result<[ExchangeIcon], Error>) -> Void) {
+        service.fetchExchangesIcons { result in
+            completion(result)
+        }
+    }
+}
+
+// MARK: - ExchangeListInteracting
+extension ExchangeListInteractor: ExchangeListInteracting {
     public func loadData() {
         presenter.presentLoading()
         presenter.hideError()
@@ -66,17 +81,9 @@ public final class ExchangeListInteractor: ExchangeListInteracting {
             self?.presenter.hideLoading()
         }
     }
-
-    private func fetchExchanges(completion: @escaping (Result<[Exchange], Error>) -> Void) {
-        service.fetchExchanges { result in
-            completion(result)
-        }
+    
+    public func cellTapped(at index: Int) {
+        let exchange = exchanges[index]
+        print(exchange)
     }
-
-    private func fetchExchangesIcons(completion: @escaping (Result<[ExchangeIcon], Error>) -> Void) {
-        service.fetchExchangesIcons { result in
-            completion(result)
-        }
-    }
-
 }

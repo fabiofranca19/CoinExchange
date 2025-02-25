@@ -126,6 +126,10 @@ extension ExchangeListViewController: UITableViewDataSource, UITableViewDelegate
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         imageLoader.cancelLoad(for: exchangesCells[indexPath.row].iconUrl)
     }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        interactor.cellTapped(at: indexPath.row)
+    }
 }
 
 extension ExchangeListViewController: ViewCode {

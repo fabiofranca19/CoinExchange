@@ -43,6 +43,12 @@
 		E63E4B652D6CA17D0071E888 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B642D6CA17D0071E888 /* ViewCode.swift */; };
 		E63E4B682D6CA2F10071E888 /* DSExchangeCellDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B672D6CA2F10071E888 /* DSExchangeCellDTO.swift */; };
 		E6D0F3292D6D4229001C1018 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3282D6D4226001C1018 /* ErrorView.swift */; };
+		E6D0F34C2D6D6990001C1018 /* ExchangeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3482D6D6990001C1018 /* ExchangeDetailInteractor.swift */; };
+		E6D0F34D2D6D6990001C1018 /* ExchangeDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F34A2D6D6990001C1018 /* ExchangeDetailService.swift */; };
+		E6D0F34E2D6D6990001C1018 /* ExchangeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F34B2D6D6990001C1018 /* ExchangeDetailViewController.swift */; };
+		E6D0F34F2D6D6990001C1018 /* ExchangeDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3462D6D6990001C1018 /* ExchangeDetailCoordinator.swift */; };
+		E6D0F3502D6D6990001C1018 /* ExchangeDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3472D6D6990001C1018 /* ExchangeDetailFactory.swift */; };
+		E6D0F3522D6D6990001C1018 /* ExchangeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3492D6D6990001C1018 /* ExchangeDetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +109,12 @@
 		E63E4B642D6CA17D0071E888 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		E63E4B672D6CA2F10071E888 /* DSExchangeCellDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSExchangeCellDTO.swift; sourceTree = "<group>"; };
 		E6D0F3282D6D4226001C1018 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		E6D0F3462D6D6990001C1018 /* ExchangeDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailCoordinator.swift; sourceTree = "<group>"; };
+		E6D0F3472D6D6990001C1018 /* ExchangeDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailFactory.swift; sourceTree = "<group>"; };
+		E6D0F3482D6D6990001C1018 /* ExchangeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailInteractor.swift; sourceTree = "<group>"; };
+		E6D0F3492D6D6990001C1018 /* ExchangeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailPresenter.swift; sourceTree = "<group>"; };
+		E6D0F34A2D6D6990001C1018 /* ExchangeDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailService.swift; sourceTree = "<group>"; };
+		E6D0F34B2D6D6990001C1018 /* ExchangeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +300,7 @@
 		E63E4B4A2D6A8AD30071E888 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E6D0F32E2D6D6922001C1018 /* ExchangeDetail */,
 				E63E4B4B2D6A8ADE0071E888 /* ExchangeList */,
 			);
 			path = Modules;
@@ -342,6 +355,19 @@
 				E63E4B672D6CA2F10071E888 /* DSExchangeCellDTO.swift */,
 			);
 			path = DSExchangeCell;
+			sourceTree = "<group>";
+		};
+		E6D0F32E2D6D6922001C1018 /* ExchangeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F3462D6D6990001C1018 /* ExchangeDetailCoordinator.swift */,
+				E6D0F3472D6D6990001C1018 /* ExchangeDetailFactory.swift */,
+				E6D0F3482D6D6990001C1018 /* ExchangeDetailInteractor.swift */,
+				E6D0F3492D6D6990001C1018 /* ExchangeDetailPresenter.swift */,
+				E6D0F34A2D6D6990001C1018 /* ExchangeDetailService.swift */,
+				E6D0F34B2D6D6990001C1018 /* ExchangeDetailViewController.swift */,
+			);
+			path = ExchangeDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,6 +521,12 @@
 				9E72FF112D6AA6D60080CA74 /* ExchangeIcon.swift in Sources */,
 				E6D0F3292D6D4229001C1018 /* ErrorView.swift in Sources */,
 				E63E4B462D6A7D4E0071E888 /* ApiEndpoint.swift in Sources */,
+				E6D0F34C2D6D6990001C1018 /* ExchangeDetailInteractor.swift in Sources */,
+				E6D0F34D2D6D6990001C1018 /* ExchangeDetailService.swift in Sources */,
+				E6D0F34E2D6D6990001C1018 /* ExchangeDetailViewController.swift in Sources */,
+				E6D0F34F2D6D6990001C1018 /* ExchangeDetailCoordinator.swift in Sources */,
+				E6D0F3502D6D6990001C1018 /* ExchangeDetailFactory.swift in Sources */,
+				E6D0F3522D6D6990001C1018 /* ExchangeDetailPresenter.swift in Sources */,
 				E63E4B0A2D6A67290071E888 /* AppDelegate.swift in Sources */,
 				9E72FF1B2D6B61B90080CA74 /* DesignSystem.swift in Sources */,
 				E63E4B572D6A8B4C0071E888 /* ExchangeListFactory.swift in Sources */,
