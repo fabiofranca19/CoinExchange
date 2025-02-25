@@ -30,6 +30,6 @@ public enum ExchangeListEndpoint: ApiEndpoint {
     }
     
     public var headers: [String : String]? {
-        return ["X-CoinAPI-Key": "9b2d60e2-7517-4984-bad9-76dab344c5a3"]
+        return ["X-CoinAPI-Key": ConfigService.apiKey]
     }
 }

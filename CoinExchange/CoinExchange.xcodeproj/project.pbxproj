@@ -76,6 +76,7 @@
 		E6D0F39A2D6E1FFB001C1018 /* ExchangeDetailCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3992D6E1FFB001C1018 /* ExchangeDetailCoordinatorSpy.swift */; };
 		E6D0F39C2D6E211E001C1018 /* ExchangeDetailViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F39B2D6E211D001C1018 /* ExchangeDetailViewControllerSpy.swift */; };
 		E6D0F39E2D6E21AE001C1018 /* DSExchangeDetailDTO+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F39D2D6E21AB001C1018 /* DSExchangeDetailDTO+Fixture.swift */; };
+		E6D0F3A02D6E3399001C1018 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F39F2D6E3390001C1018 /* ConfigService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		E6D0F3992D6E1FFB001C1018 /* ExchangeDetailCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailCoordinatorSpy.swift; sourceTree = "<group>"; };
 		E6D0F39B2D6E211D001C1018 /* ExchangeDetailViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewControllerSpy.swift; sourceTree = "<group>"; };
 		E6D0F39D2D6E21AB001C1018 /* DSExchangeDetailDTO+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSExchangeDetailDTO+Fixture.swift"; sourceTree = "<group>"; };
+		E6D0F39F2D6E3390001C1018 /* ConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 		E63E4B472D6A85560071E888 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				E6D0F39F2D6E3390001C1018 /* ConfigService.swift */,
 				E63E4B432D6A7CFE0071E888 /* Servicing.swift */,
 				E63E4B452D6A7D4E0071E888 /* ApiEndpoint.swift */,
 			);
@@ -642,6 +645,7 @@
 				9E72FF362D6CE9240080CA74 /* UIImageView+Extension.swift in Sources */,
 				E63E4B3B2D6A69B60071E888 /* AppCoordinator.swift in Sources */,
 				E63E4B532D6A8B2B0071E888 /* ExchangeListViewController.swift in Sources */,
+				E6D0F3A02D6E3399001C1018 /* ConfigService.swift in Sources */,
 				E63E4B652D6CA17D0071E888 /* ViewCode.swift in Sources */,
 				9E72FF3D2D6D31D70080CA74 /* ImageLoader.swift in Sources */,
 				E63E4B492D6A85800071E888 /* Service.swift in Sources */,
