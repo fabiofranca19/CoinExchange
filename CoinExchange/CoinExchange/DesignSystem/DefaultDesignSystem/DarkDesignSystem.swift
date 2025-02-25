@@ -1,6 +1,6 @@
 import UIKit
 
-public struct DefaultDesignSystem: DesignSystem {
+public final class DefaultDesignSystem: DesignSystem {
     public func makeLoading() -> LoadingViewDisplaying {
         LoadingView()
     }

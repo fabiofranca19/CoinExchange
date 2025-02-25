@@ -21,34 +21,30 @@ public final class ExchangeListViewController: UIViewController {
         label.font = DSTypography.Default.title
         label.text = "Exchange List"
         label.textColor = DSColorPalette.Dark.textPrimary
-        label.accessibilityIdentifier = "exchangeListTitleLabel"
         return label
     }()
-
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.isUserInteractionEnabled = true
         tableView.register(DSExchangeCell.self, forCellReuseIdentifier: DSExchangeCell.identifier)
-        tableView.accessibilityIdentifier = "exchangeListTableView"
         return tableView
     }()
-
+    
     private lazy var loadingView: LoadingViewDisplaying = {
         let loadingView = designSystem.makeLoading()
         loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.accessibilityIdentifier = "exchangeListLoadingView"
         return loadingView
     }()
-
+    
     private lazy var errorView: ErrorViewDisplaying = {
         let errorView = designSystem.makeErrorView()
         errorView.translatesAutoresizingMaskIntoConstraints = false
         errorView.onRetry = { [weak self] in
             self?.interactor.loadData()
         }
-        errorView.accessibilityIdentifier = "exchangeListErrorView"
         return errorView
     }()
     
@@ -116,7 +112,6 @@ extension ExchangeListViewController: UITableViewDataSource, UITableViewDelegate
             return UITableViewCell()
         }
         
-        cell.accessibilityIdentifier = "exchangeCell_\(indexPath.row)"
         cell.updateCell(exchangesDTO)
         imageLoader.loadImage(
             from: exchangesDTO.iconUrl,

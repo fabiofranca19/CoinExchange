@@ -23,9 +23,8 @@
 		E63E4B0C2D6A67290071E888 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B0B2D6A67290071E888 /* SceneDelegate.swift */; };
 		E63E4B132D6A672A0071E888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63E4B122D6A672A0071E888 /* Assets.xcassets */; };
 		E63E4B162D6A672A0071E888 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E63E4B152D6A672A0071E888 /* Base */; };
-		E63E4B212D6A672A0071E888 /* CoinExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B202D6A672A0071E888 /* CoinExchangeTests.swift */; };
-		E63E4B2B2D6A672A0071E888 /* CoinExchangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B2A2D6A672A0071E888 /* CoinExchangeUITests.swift */; };
-		E63E4B2D2D6A672A0071E888 /* CoinExchangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B2C2D6A672A0071E888 /* CoinExchangeUITestsLaunchTests.swift */; };
+		E63E4B2B2D6A672A0071E888 /* ExchangeListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B2A2D6A672A0071E888 /* ExchangeListUITests.swift */; };
+		E63E4B2D2D6A672A0071E888 /* ExchangeLauchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B2C2D6A672A0071E888 /* ExchangeLauchUITests.swift */; };
 		E63E4B3B2D6A69B60071E888 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B3A2D6A69B60071E888 /* AppCoordinator.swift */; };
 		E63E4B412D6A7BB10071E888 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B402D6A7BB10071E888 /* DependencyContainer.swift */; };
 		E63E4B442D6A7CFE0071E888 /* Servicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B432D6A7CFE0071E888 /* Servicing.swift */; };
@@ -50,6 +49,33 @@
 		E6D0F3502D6D6990001C1018 /* ExchangeDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3472D6D6990001C1018 /* ExchangeDetailFactory.swift */; };
 		E6D0F3522D6D6990001C1018 /* ExchangeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3492D6D6990001C1018 /* ExchangeDetailPresenter.swift */; };
 		E6D0F3542D6D7320001C1018 /* DSSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3532D6D731F001C1018 /* DSSizes.swift */; };
+		E6D0F36B2D6D91FB001C1018 /* ExchangeListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3592D6D7C4E001C1018 /* ExchangeListInteractorTests.swift */; };
+		E6D0F36C2D6D9224001C1018 /* DependencyContainerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3682D6D8CA5001C1018 /* DependencyContainerMock.swift */; };
+		E6D0F36D2D6D9229001C1018 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3632D6D840B001C1018 /* ServiceMock.swift */; };
+		E6D0F36E2D6D922E001C1018 /* AutoEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F35D2D6D80C9001C1018 /* AutoEquatable.swift */; };
+		E6D0F36F2D6D922E001C1018 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F36A2D6D8FD8001C1018 /* XCTestCase+Extension.swift */; };
+		E6D0F3702D6D923F001C1018 /* ExchangeListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3602D6D8249001C1018 /* ExchangeListViewControllerSpy.swift */; };
+		E6D0F3712D6D923F001C1018 /* ExchangeListServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3642D6D87CC001C1018 /* ExchangeListServiceMock.swift */; };
+		E6D0F3722D6D923F001C1018 /* ExchangeIcon+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3672D6D8AF2001C1018 /* ExchangeIcon+Fixture.swift */; };
+		E6D0F3732D6D923F001C1018 /* ExchangeListCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F35F2D6D81D7001C1018 /* ExchangeListCoordinatorSpy.swift */; };
+		E6D0F3742D6D923F001C1018 /* Exchange+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3662D6D88C0001C1018 /* Exchange+Fixture.swift */; };
+		E6D0F3752D6D9245001C1018 /* ExchangeListInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F35E2D6D8168001C1018 /* ExchangeListInteractorSpy.swift */; };
+		E6D0F3762D6D9245001C1018 /* ExchangeListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F35B2D6D7D3C001C1018 /* ExchangeListPresenterSpy.swift */; };
+		E6D0F3782D6D9BBF001C1018 /* ExchangeListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3772D6D9BB8001C1018 /* ExchangeListPresenterTests.swift */; };
+		E6D0F37A2D6D9EA1001C1018 /* DSExchangeCellDTO+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3792D6D9E9D001C1018 /* DSExchangeCellDTO+Fixture.swift */; };
+		E6D0F37E2D6DA131001C1018 /* NavigationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F37D2D6DA120001C1018 /* NavigationSpy.swift */; };
+		E6D0F3822D6DA436001C1018 /* DesingSystemMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3812D6DA431001C1018 /* DesingSystemMock.swift */; };
+		E6D0F3842D6DA552001C1018 /* ImageLoadingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3832D6DA54D001C1018 /* ImageLoadingMock.swift */; };
+		E6D0F3862D6DA616001C1018 /* ImageCacheMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3852D6DA60F001C1018 /* ImageCacheMock.swift */; };
+		E6D0F3892D6E18DD001C1018 /* ExchangeListCoodinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3882D6E18D3001C1018 /* ExchangeListCoodinatorTests.swift */; };
+		E6D0F38E2D6E1CF7001C1018 /* ExchangeDetailCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F38D2D6E1CF6001C1018 /* ExchangeDetailCoordinatorTests.swift */; };
+		E6D0F3902D6E1D4D001C1018 /* ExchangeDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F38F2D6E1D4B001C1018 /* ExchangeDetailInteractorTests.swift */; };
+		E6D0F3932D6E1D7C001C1018 /* ExchangeDetailPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3922D6E1D79001C1018 /* ExchangeDetailPresenterSpy.swift */; };
+		E6D0F3962D6E1D8F001C1018 /* ExchangeDetailServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3952D6E1D8F001C1018 /* ExchangeDetailServiceMock.swift */; };
+		E6D0F3982D6E1FB6001C1018 /* ExchangeDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3972D6E1FAE001C1018 /* ExchangeDetailPresenterTests.swift */; };
+		E6D0F39A2D6E1FFB001C1018 /* ExchangeDetailCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3992D6E1FFB001C1018 /* ExchangeDetailCoordinatorSpy.swift */; };
+		E6D0F39C2D6E211E001C1018 /* ExchangeDetailViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F39B2D6E211D001C1018 /* ExchangeDetailViewControllerSpy.swift */; };
+		E6D0F39E2D6E21AE001C1018 /* DSExchangeDetailDTO+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F39D2D6E21AB001C1018 /* DSExchangeDetailDTO+Fixture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,10 +115,9 @@
 		E63E4B152D6A672A0071E888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E63E4B172D6A672A0071E888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E63E4B1C2D6A672A0071E888 /* CoinExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E63E4B202D6A672A0071E888 /* CoinExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinExchangeTests.swift; sourceTree = "<group>"; };
 		E63E4B262D6A672A0071E888 /* CoinExchangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinExchangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E63E4B2A2D6A672A0071E888 /* CoinExchangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinExchangeUITests.swift; sourceTree = "<group>"; };
-		E63E4B2C2D6A672A0071E888 /* CoinExchangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinExchangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E63E4B2A2D6A672A0071E888 /* ExchangeListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListUITests.swift; sourceTree = "<group>"; };
+		E63E4B2C2D6A672A0071E888 /* ExchangeLauchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeLauchUITests.swift; sourceTree = "<group>"; };
 		E63E4B3A2D6A69B60071E888 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E63E4B402D6A7BB10071E888 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		E63E4B432D6A7CFE0071E888 /* Servicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicing.swift; sourceTree = "<group>"; };
@@ -117,6 +142,34 @@
 		E6D0F34A2D6D6990001C1018 /* ExchangeDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailService.swift; sourceTree = "<group>"; };
 		E6D0F34B2D6D6990001C1018 /* ExchangeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewController.swift; sourceTree = "<group>"; };
 		E6D0F3532D6D731F001C1018 /* DSSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSizes.swift; sourceTree = "<group>"; };
+		E6D0F3592D6D7C4E001C1018 /* ExchangeListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListInteractorTests.swift; sourceTree = "<group>"; };
+		E6D0F35B2D6D7D3C001C1018 /* ExchangeListPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListPresenterSpy.swift; sourceTree = "<group>"; };
+		E6D0F35D2D6D80C9001C1018 /* AutoEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoEquatable.swift; sourceTree = "<group>"; };
+		E6D0F35E2D6D8168001C1018 /* ExchangeListInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListInteractorSpy.swift; sourceTree = "<group>"; };
+		E6D0F35F2D6D81D7001C1018 /* ExchangeListCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListCoordinatorSpy.swift; sourceTree = "<group>"; };
+		E6D0F3602D6D8249001C1018 /* ExchangeListViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListViewControllerSpy.swift; sourceTree = "<group>"; };
+		E6D0F3632D6D840B001C1018 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		E6D0F3642D6D87CC001C1018 /* ExchangeListServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListServiceMock.swift; sourceTree = "<group>"; };
+		E6D0F3662D6D88C0001C1018 /* Exchange+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exchange+Fixture.swift"; sourceTree = "<group>"; };
+		E6D0F3672D6D8AF2001C1018 /* ExchangeIcon+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExchangeIcon+Fixture.swift"; sourceTree = "<group>"; };
+		E6D0F3682D6D8CA5001C1018 /* DependencyContainerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerMock.swift; sourceTree = "<group>"; };
+		E6D0F36A2D6D8FD8001C1018 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		E6D0F3772D6D9BB8001C1018 /* ExchangeListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListPresenterTests.swift; sourceTree = "<group>"; };
+		E6D0F3792D6D9E9D001C1018 /* DSExchangeCellDTO+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSExchangeCellDTO+Fixture.swift"; sourceTree = "<group>"; };
+		E6D0F37D2D6DA120001C1018 /* NavigationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSpy.swift; sourceTree = "<group>"; };
+		E6D0F3812D6DA431001C1018 /* DesingSystemMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesingSystemMock.swift; sourceTree = "<group>"; };
+		E6D0F3832D6DA54D001C1018 /* ImageLoadingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingMock.swift; sourceTree = "<group>"; };
+		E6D0F3852D6DA60F001C1018 /* ImageCacheMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheMock.swift; sourceTree = "<group>"; };
+		E6D0F3872D6DB41C001C1018 /* ExchangeListDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListDisplaying.swift; sourceTree = "<group>"; };
+		E6D0F3882D6E18D3001C1018 /* ExchangeListCoodinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListCoodinatorTests.swift; sourceTree = "<group>"; };
+		E6D0F38D2D6E1CF6001C1018 /* ExchangeDetailCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailCoordinatorTests.swift; sourceTree = "<group>"; };
+		E6D0F38F2D6E1D4B001C1018 /* ExchangeDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailInteractorTests.swift; sourceTree = "<group>"; };
+		E6D0F3922D6E1D79001C1018 /* ExchangeDetailPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailPresenterSpy.swift; sourceTree = "<group>"; };
+		E6D0F3952D6E1D8F001C1018 /* ExchangeDetailServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailServiceMock.swift; sourceTree = "<group>"; };
+		E6D0F3972D6E1FAE001C1018 /* ExchangeDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailPresenterTests.swift; sourceTree = "<group>"; };
+		E6D0F3992D6E1FFB001C1018 /* ExchangeDetailCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailCoordinatorSpy.swift; sourceTree = "<group>"; };
+		E6D0F39B2D6E211D001C1018 /* ExchangeDetailViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewControllerSpy.swift; sourceTree = "<group>"; };
+		E6D0F39D2D6E21AB001C1018 /* DSExchangeDetailDTO+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSExchangeDetailDTO+Fixture.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +259,7 @@
 		E63E4AFD2D6A67290071E888 = {
 			isa = PBXGroup;
 			children = (
+				E6D0F3872D6DB41C001C1018 /* ExchangeListDisplaying.swift */,
 				E63E4B082D6A67290071E888 /* CoinExchange */,
 				E63E4B1F2D6A672A0071E888 /* CoinExchangeTests */,
 				E63E4B292D6A672A0071E888 /* CoinExchangeUITests */,
@@ -243,7 +297,9 @@
 		E63E4B1F2D6A672A0071E888 /* CoinExchangeTests */ = {
 			isa = PBXGroup;
 			children = (
-				E63E4B202D6A672A0071E888 /* CoinExchangeTests.swift */,
+				E6D0F3622D6D8406001C1018 /* Mocks */,
+				E6D0F35C2D6D80C2001C1018 /* Utils */,
+				E6D0F3572D6D7C2D001C1018 /* Modules */,
 			);
 			path = CoinExchangeTests;
 			sourceTree = "<group>";
@@ -251,8 +307,8 @@
 		E63E4B292D6A672A0071E888 /* CoinExchangeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E63E4B2A2D6A672A0071E888 /* CoinExchangeUITests.swift */,
-				E63E4B2C2D6A672A0071E888 /* CoinExchangeUITestsLaunchTests.swift */,
+				E63E4B2A2D6A672A0071E888 /* ExchangeListUITests.swift */,
+				E63E4B2C2D6A672A0071E888 /* ExchangeLauchUITests.swift */,
 			);
 			path = CoinExchangeUITests;
 			sourceTree = "<group>";
@@ -371,6 +427,86 @@
 				E6D0F34B2D6D6990001C1018 /* ExchangeDetailViewController.swift */,
 			);
 			path = ExchangeDetail;
+			sourceTree = "<group>";
+		};
+		E6D0F3572D6D7C2D001C1018 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F38C2D6E1B33001C1018 /* ExchangeDetailTests */,
+				E6D0F3582D6D7C38001C1018 /* ExchangeListTests */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E6D0F3582D6D7C38001C1018 /* ExchangeListTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F3882D6E18D3001C1018 /* ExchangeListCoodinatorTests.swift */,
+				E6D0F3772D6D9BB8001C1018 /* ExchangeListPresenterTests.swift */,
+				E6D0F3612D6D8344001C1018 /* Doubles */,
+				E6D0F3592D6D7C4E001C1018 /* ExchangeListInteractorTests.swift */,
+			);
+			path = ExchangeListTests;
+			sourceTree = "<group>";
+		};
+		E6D0F35C2D6D80C2001C1018 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F36A2D6D8FD8001C1018 /* XCTestCase+Extension.swift */,
+				E6D0F35D2D6D80C9001C1018 /* AutoEquatable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E6D0F3612D6D8344001C1018 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F37D2D6DA120001C1018 /* NavigationSpy.swift */,
+				E6D0F3792D6D9E9D001C1018 /* DSExchangeCellDTO+Fixture.swift */,
+				E6D0F3672D6D8AF2001C1018 /* ExchangeIcon+Fixture.swift */,
+				E6D0F3662D6D88C0001C1018 /* Exchange+Fixture.swift */,
+				E6D0F3642D6D87CC001C1018 /* ExchangeListServiceMock.swift */,
+				E6D0F3602D6D8249001C1018 /* ExchangeListViewControllerSpy.swift */,
+				E6D0F35F2D6D81D7001C1018 /* ExchangeListCoordinatorSpy.swift */,
+				E6D0F35E2D6D8168001C1018 /* ExchangeListInteractorSpy.swift */,
+				E6D0F35B2D6D7D3C001C1018 /* ExchangeListPresenterSpy.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		E6D0F3622D6D8406001C1018 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F3852D6DA60F001C1018 /* ImageCacheMock.swift */,
+				E6D0F3832D6DA54D001C1018 /* ImageLoadingMock.swift */,
+				E6D0F3812D6DA431001C1018 /* DesingSystemMock.swift */,
+				E6D0F3682D6D8CA5001C1018 /* DependencyContainerMock.swift */,
+				E6D0F3632D6D840B001C1018 /* ServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E6D0F38C2D6E1B33001C1018 /* ExchangeDetailTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F3972D6E1FAE001C1018 /* ExchangeDetailPresenterTests.swift */,
+				E6D0F3912D6E1D68001C1018 /* Doubles */,
+				E6D0F38F2D6E1D4B001C1018 /* ExchangeDetailInteractorTests.swift */,
+				E6D0F38D2D6E1CF6001C1018 /* ExchangeDetailCoordinatorTests.swift */,
+			);
+			path = ExchangeDetailTests;
+			sourceTree = "<group>";
+		};
+		E6D0F3912D6E1D68001C1018 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F39D2D6E21AB001C1018 /* DSExchangeDetailDTO+Fixture.swift */,
+				E6D0F39B2D6E211D001C1018 /* ExchangeDetailViewControllerSpy.swift */,
+				E6D0F3992D6E1FFB001C1018 /* ExchangeDetailCoordinatorSpy.swift */,
+				E6D0F3952D6E1D8F001C1018 /* ExchangeDetailServiceMock.swift */,
+				E6D0F3922D6E1D79001C1018 /* ExchangeDetailPresenterSpy.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,7 +684,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E63E4B212D6A672A0071E888 /* CoinExchangeTests.swift in Sources */,
+				E6D0F39E2D6E21AE001C1018 /* DSExchangeDetailDTO+Fixture.swift in Sources */,
+				E6D0F3962D6E1D8F001C1018 /* ExchangeDetailServiceMock.swift in Sources */,
+				E6D0F3782D6D9BBF001C1018 /* ExchangeListPresenterTests.swift in Sources */,
+				E6D0F36D2D6D9229001C1018 /* ServiceMock.swift in Sources */,
+				E6D0F36C2D6D9224001C1018 /* DependencyContainerMock.swift in Sources */,
+				E6D0F3932D6E1D7C001C1018 /* ExchangeDetailPresenterSpy.swift in Sources */,
+				E6D0F36B2D6D91FB001C1018 /* ExchangeListInteractorTests.swift in Sources */,
+				E6D0F39A2D6E1FFB001C1018 /* ExchangeDetailCoordinatorSpy.swift in Sources */,
+				E6D0F3702D6D923F001C1018 /* ExchangeListViewControllerSpy.swift in Sources */,
+				E6D0F3842D6DA552001C1018 /* ImageLoadingMock.swift in Sources */,
+				E6D0F37A2D6D9EA1001C1018 /* DSExchangeCellDTO+Fixture.swift in Sources */,
+				E6D0F3892D6E18DD001C1018 /* ExchangeListCoodinatorTests.swift in Sources */,
+				E6D0F3902D6E1D4D001C1018 /* ExchangeDetailInteractorTests.swift in Sources */,
+				E6D0F38E2D6E1CF7001C1018 /* ExchangeDetailCoordinatorTests.swift in Sources */,
+				E6D0F39C2D6E211E001C1018 /* ExchangeDetailViewControllerSpy.swift in Sources */,
+				E6D0F3712D6D923F001C1018 /* ExchangeListServiceMock.swift in Sources */,
+				E6D0F3722D6D923F001C1018 /* ExchangeIcon+Fixture.swift in Sources */,
+				E6D0F3822D6DA436001C1018 /* DesingSystemMock.swift in Sources */,
+				E6D0F3732D6D923F001C1018 /* ExchangeListCoordinatorSpy.swift in Sources */,
+				E6D0F37E2D6DA131001C1018 /* NavigationSpy.swift in Sources */,
+				E6D0F3862D6DA616001C1018 /* ImageCacheMock.swift in Sources */,
+				E6D0F3742D6D923F001C1018 /* Exchange+Fixture.swift in Sources */,
+				E6D0F3752D6D9245001C1018 /* ExchangeListInteractorSpy.swift in Sources */,
+				E6D0F3762D6D9245001C1018 /* ExchangeListPresenterSpy.swift in Sources */,
+				E6D0F36E2D6D922E001C1018 /* AutoEquatable.swift in Sources */,
+				E6D0F3982D6E1FB6001C1018 /* ExchangeDetailPresenterTests.swift in Sources */,
+				E6D0F36F2D6D922E001C1018 /* XCTestCase+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,8 +718,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E63E4B2D2D6A672A0071E888 /* CoinExchangeUITestsLaunchTests.swift in Sources */,
-				E63E4B2B2D6A672A0071E888 /* CoinExchangeUITests.swift in Sources */,
+				E63E4B2D2D6A672A0071E888 /* ExchangeLauchUITests.swift in Sources */,
+				E63E4B2B2D6A672A0071E888 /* ExchangeListUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,7 +934,6 @@
 		E63E4B342D6A672A0071E888 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -792,7 +953,6 @@
 		E63E4B352D6A672A0071E888 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -812,7 +972,6 @@
 		E63E4B372D6A672A0071E888 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y72HNGSH66;
@@ -830,7 +989,6 @@
 		E63E4B382D6A672A0071E888 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y72HNGSH66;
