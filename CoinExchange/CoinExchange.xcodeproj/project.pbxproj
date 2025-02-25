@@ -49,6 +49,7 @@
 		E6D0F34F2D6D6990001C1018 /* ExchangeDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3462D6D6990001C1018 /* ExchangeDetailCoordinator.swift */; };
 		E6D0F3502D6D6990001C1018 /* ExchangeDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3472D6D6990001C1018 /* ExchangeDetailFactory.swift */; };
 		E6D0F3522D6D6990001C1018 /* ExchangeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3492D6D6990001C1018 /* ExchangeDetailPresenter.swift */; };
+		E6D0F3542D6D7320001C1018 /* DSSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F3532D6D731F001C1018 /* DSSizes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		E6D0F3492D6D6990001C1018 /* ExchangeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailPresenter.swift; sourceTree = "<group>"; };
 		E6D0F34A2D6D6990001C1018 /* ExchangeDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailService.swift; sourceTree = "<group>"; };
 		E6D0F34B2D6D6990001C1018 /* ExchangeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewController.swift; sourceTree = "<group>"; };
+		E6D0F3532D6D731F001C1018 /* DSSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSizes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		9E72FF1C2D6B625E0080CA74 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				E6D0F3532D6D731F001C1018 /* DSSizes.swift */,
 				9E72FF212D6B640B0080CA74 /* DSSpacing.swift */,
 				9E72FF1F2D6B63020080CA74 /* DSTypography.swift */,
 				9E72FF1D2D6B626C0080CA74 /* DSColorPalette.swift */,
@@ -529,6 +532,7 @@
 				E6D0F3522D6D6990001C1018 /* ExchangeDetailPresenter.swift in Sources */,
 				E63E4B0A2D6A67290071E888 /* AppDelegate.swift in Sources */,
 				9E72FF1B2D6B61B90080CA74 /* DesignSystem.swift in Sources */,
+				E6D0F3542D6D7320001C1018 /* DSSizes.swift in Sources */,
 				E63E4B572D6A8B4C0071E888 /* ExchangeListFactory.swift in Sources */,
 				E63E4B5C2D6A916E0071E888 /* ExchangeListEndpoint.swift in Sources */,
 				9E72FF342D6CDA9A0080CA74 /* String+Extenion.swift in Sources */,

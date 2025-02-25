@@ -28,12 +28,12 @@ enum ExchangeDetailFactory {
         )
         let viewController = ExchangeDetailViewController(
             interactor: interactor,
-            desingSystem: designSystem,
+            designSystem: designSystem,
             imageLoader: imageLoader,
             imageCache: imageCache
         )
 
-        presenter.viewController = viewController
+        presenter.controller = viewController
 
         return viewController
     }

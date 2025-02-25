@@ -92,8 +92,8 @@ extension DSExchangeCell: ViewCode {
             iconImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: DSSpacing.Default.space3),
             iconImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: DSSpacing.Default.space5),
             iconImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -DSSpacing.Default.space5),
-            iconImageView.widthAnchor.constraint(equalToConstant: DSSpacing.Default.space4),
-            iconImageView.heightAnchor.constraint(equalToConstant: DSSpacing.Default.space4),
+            iconImageView.widthAnchor.constraint(equalToConstant: DSSizes.Default.smallIcon),
+            iconImageView.heightAnchor.constraint(equalToConstant: DSSizes.Default.smallIcon),
             
             textStackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: DSSpacing.Default.space3),
             textStackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
