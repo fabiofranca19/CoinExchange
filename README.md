@@ -1,6 +1,6 @@
 # CoinExchange
 
-![Gif do App](https://github.com/fabiofranca19/CoinExchange/issues/1#issue-2879165571)  <!-- Adicione o link do seu gif aqui -->
+![Gif do App](https://private-user-images.githubusercontent.com/38943978/416814319-9eda2f1c-cb67-42de-b42c-8d9f60c4ee8f.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDA1MDY0MTEsIm5iZiI6MTc0MDUwNjExMSwicGF0aCI6Ii8zODk0Mzk3OC80MTY4MTQzMTktOWVkYTJmMWMtY2I2Ny00MmRlLWI0MmMtOGQ5ZjYwYzRlZThmLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjI1VDE3NTUxMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVmZWM4ZmYyMTFlNWE2OTFlZmQ1YjY4ZDI1NGZjMTUxODk0Nzg2OTQyY2YwMmMwZGM2MmFhNjJlNGUwYjdiYmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.SxJ5u0_3zZUZrsafMIn4zCea4JQF6Yf9mt3SQs08z10)  <!-- Adicione o link do seu gif aqui -->
 
 CoinExchange é um aplicativo iOS desenvolvido em Swift que consulta a API da CoinAPI.io para exibir uma lista de exchanges de criptomoedas e seus respectivos ícones. O aplicativo foi projetado sem dependências externas, utilizando exclusivamente recursos nativos da linguagem e do SDK do iOS.
 
