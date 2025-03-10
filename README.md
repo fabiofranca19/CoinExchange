@@ -34,6 +34,6 @@ Para executar o projeto, você precisará de:
 
    Pressione `Cmd + R` ou clique em "Run" para compilar e executar o aplicativo. A tela inicial exibirá a lista de exchanges obtidas da API.
 
-## Dúvidas
+## Duvidas
 
 Caso tenha dúvidas, verifique a documentação da CoinAPI.io para mais detalhes sobre a obtenção da chave de API.
