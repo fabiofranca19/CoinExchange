@@ -14,6 +14,7 @@ final class ExchangeDetailInteractorTests: XCTestCase {
         XCTAssertEqual(
             doubles.presenter.messages,
             [
+                .presentExchangeIcon,
                 .presentExchange(exchanges: expectedExchange, iconUrl: expectedIconUrl)
             ]
         )
