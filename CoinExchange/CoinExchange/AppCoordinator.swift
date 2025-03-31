@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol Navigating {
+protocol Navigating {
     func pushViewController(_ viewController: UIViewController, animated: Bool)
     func popViewController(animated: Bool)
 }

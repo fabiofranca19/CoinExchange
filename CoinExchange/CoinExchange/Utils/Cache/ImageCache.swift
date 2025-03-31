@@ -1,11 +1,11 @@
 import UIKit
 
-public protocol ImageCaching: AnyObject {
+protocol ImageCaching: AnyObject {
     func getImage(for url: URL) -> UIImage?
     func setImage(_ image: UIImage, for url: URL)
 }
 
-class ImageCache: ImageCaching {
+final class ImageCache: ImageCaching {
     private let cache = NSCache<NSURL, UIImage>()
     
     func getImage(for url: URL) -> UIImage? {

@@ -1,10 +1,10 @@
 import Foundation
 
-public protocol ExchangeListCoordinating: AnyObject {
+protocol ExchangeListCoordinating: AnyObject {
     func goToExchangeDetail(_ exchange: Exchange, iconUrl: String)
 }
 
-public final class ExchangeListCoordinator {
+final class ExchangeListCoordinator {
     private let navigation: Navigating
     private let container: DependencyInjecting
     
@@ -19,7 +19,7 @@ public final class ExchangeListCoordinator {
 
 // MARK: - ExchangeListCoordinating
 extension ExchangeListCoordinator: ExchangeListCoordinating {
-    public func goToExchangeDetail(_ exchange: Exchange, iconUrl: String) {
+    func goToExchangeDetail(_ exchange: Exchange, iconUrl: String) {
         let controller = ExchangeDetailFactory.make(
             navigation: navigation,
             container,

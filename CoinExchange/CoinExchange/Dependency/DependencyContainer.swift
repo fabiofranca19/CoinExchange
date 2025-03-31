@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol DependencyInjecting {
+protocol DependencyInjecting {
     func register<T>(_ type: T.Type, factory: @escaping () -> T)
     func resolve<T>(_ type: T.Type) -> T
 }

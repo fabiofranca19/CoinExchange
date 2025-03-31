@@ -1,11 +1,11 @@
 import UIKit
 
-public protocol LoadingViewDisplaying: AnyObject, UIView {
+protocol LoadingViewDisplaying: AnyObject, UIView {
     func startAnimating()
     func stopAnimating()
 }
 
-public final class LoadingView: UIView {
+final class LoadingView: UIView {
     private let activityIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .large)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -17,36 +17,35 @@ public final class LoadingView: UIView {
         buildView()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) { nil }
 }
 
 extension LoadingView: ViewCode {
-    public func setupHierarchy() {
+    func setupHierarchy() {
         addSubview(activityIndicator)
     }
     
-    public func setupConstraints() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
     
-    public func setupAdditionalConfigurations() {
+    func setupAdditionalConfigurations() {
         backgroundColor = UIColor.black.withAlphaComponent(0.5)
         isHidden = true
     }
 }
 
 extension LoadingView: LoadingViewDisplaying {
-    public func startAnimating() {
+    func startAnimating() {
         isHidden = false
         activityIndicator.startAnimating()
     }
     
-    public func stopAnimating() {
+    func stopAnimating() {
         activityIndicator.stopAnimating()
         isHidden = true
     }

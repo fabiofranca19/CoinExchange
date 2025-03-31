@@ -1,11 +1,11 @@
 import UIKit
 
-public enum DSColorPalette {
-    public enum Default {
-        public static let primary = UIColor(hex: "#323232")
-        public static let background = UIColor(hex: "#161616")
-        public static let textPrimary = UIColor.white
-        public static let textSecondary = UIColor(hex: "#BEBEBE")
-        public static let errorBackground = UIColor.red
+enum DSColorPalette {
+    enum Default {
+        static let primary = UIColor(hex: "#323232")
+        static let background = UIColor(hex: "#161616")
+        static let textPrimary = UIColor.white
+        static let textSecondary = UIColor(hex: "#BEBEBE")
+        static let errorBackground = UIColor.red
     }
 }

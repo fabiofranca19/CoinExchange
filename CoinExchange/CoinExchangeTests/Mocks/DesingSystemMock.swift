@@ -2,7 +2,7 @@ import UIKit
 @testable import CoinExchange
 
 final class DesignSystemMock: DesignSystem {
-    public enum Message: AutoEquatable {
+    enum Message: AutoEquatable {
         case makeLoading
         case makeExchangeCell(style: UITableViewCell.CellStyle)
         case makeErrorView
@@ -31,7 +31,7 @@ final class DesignSystemMock: DesignSystem {
 }
 
 final class LoadingViewMock: UIView, LoadingViewDisplaying {
-    public enum Message: AutoEquatable {
+    enum Message: AutoEquatable {
         case startAnimating
         case stopAnimating
     }
@@ -56,7 +56,7 @@ final class LoadingViewMock: UIView, LoadingViewDisplaying {
 }
 
 final class ExchangeCellMock: UITableViewCell, DSExchangeCellDisplaying {
-    public enum Message: AutoEquatable {
+    enum Message: AutoEquatable {
         case updateCell(dto: DSExchangeCellDTO)
         case updateImage(icon: UIImage?)
     }
@@ -81,7 +81,7 @@ final class ExchangeCellMock: UITableViewCell, DSExchangeCellDisplaying {
 }
 
 final class ErrorViewMock: UIView, ErrorViewDisplaying {
-    public enum Message: AutoEquatable {
+    enum Message: AutoEquatable {
         case showError(message: String, designSystem: DesignSystem?)
         case hideError
     }

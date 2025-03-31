@@ -1,9 +1,9 @@
 import UIKit
 
 // MARK: - ViewCode
-public class BaseViewController<Interactor>: UIViewController, ViewCode {
-    public let interactor: Interactor
-    public let designSystem: DesignSystem
+class BaseViewController<Interactor>: UIViewController, ViewCode {
+    let interactor: Interactor
+    let designSystem: DesignSystem
     
     private lazy var loadingView: LoadingViewDisplaying = {
         let loadingView = designSystem.makeLoading()
@@ -12,7 +12,7 @@ public class BaseViewController<Interactor>: UIViewController, ViewCode {
         return loadingView
     }()
     
-    public init(
+    init(
         interactor: Interactor,
         designSystem: DesignSystem
     ) {
@@ -22,18 +22,18 @@ public class BaseViewController<Interactor>: UIViewController, ViewCode {
     }
     
     @available(*, unavailable)
-    public required init?(coder aDecoder: NSCoder) { nil }
+    required init?(coder aDecoder: NSCoder) { nil }
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         buildView()
     }
     
-    public func setupHierarchy() {
+    func setupHierarchy() {
         view.addSubview(loadingView)
     }
     
-    public func setupConstraints() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             loadingView.topAnchor.constraint(equalTo: view.topAnchor),
             loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -42,15 +42,15 @@ public class BaseViewController<Interactor>: UIViewController, ViewCode {
         ])
     }
     
-    public func setupAdditionalConfigurations() { }
+    func setupAdditionalConfigurations() { }
     
-    public func showLoading() {
+    func showLoading() {
         DispatchQueue.main.async {
             self.loadingView.startAnimating()
         }
     }
 
-    public func hideLoading() {
+    func hideLoading() {
         DispatchQueue.main.async {
             self.loadingView.stopAnimating()
         }

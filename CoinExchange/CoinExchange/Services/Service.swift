@@ -1,6 +1,12 @@
 import Foundation
 
 final class Service: Servicing {
+    private let urlSession: URLSession
+    
+    init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
+    
     func execute<E: Decodable>(
         _ endpoint: ApiEndpoint,
         completion: @escaping (Result<E, Error>) -> Void
@@ -43,7 +49,7 @@ final class Service: Servicing {
             }
         }
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = urlSession.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return

@@ -1,48 +1,48 @@
 import XCTest
 @testable import CoinExchange
 
-public enum MockError: Error {
+enum MockError: Error {
     case generic
 }
 
-public enum MockEndpoint: ApiEndpoint {
-    public var baseURL: URL {
+enum MockEndpoint: ApiEndpoint {
+    var baseURL: URL {
         return URL(string: "https://mock-base-url.com")!
     }
     
-    public var path: String {
+    var path: String {
         return "/mock-path"
     }
     
-    public var httpMethod: HTTPMethod {
+    var httpMethod: HTTPMethod {
         return .get
     }
     
-    public var queryParameters: [String: String]? {
+    var queryParameters: [String: String]? {
         return ["mockKey": "mockValue"]
     }
     
-    public var bodyParametes: [String: Any]? {
+    var bodyParametes: [String: Any]? {
         return ["mockParam": "mockData"]
     }
     
-    public var headers: [String: String]? {
+    var headers: [String: String]? {
         return ["Authorization": "Bearer mockToken"]
     }
 }
 
-public final class ServiceMock: Servicing {
-    public enum Message: AutoEquatable {
+final class ServiceMock: Servicing {
+    enum Message: AutoEquatable {
         case execute(expectedEndpoint: ApiEndpoint)
     }
     
     private(set) var messages: [Message] = []
     
-    public var isSuccess: Bool = true
-    public var mockResponse: Decodable?
-    public var endpointExpected: ApiEndpoint?
+    var isSuccess: Bool = true
+    var mockResponse: Decodable?
+    var endpointExpected: ApiEndpoint?
     
-    public func execute<E: Decodable>(
+    func execute<E: Decodable>(
         _ endpoint: ApiEndpoint,
         completion: @escaping (Result<E, Error>) -> Void
     ) {

@@ -1,7 +1,7 @@
 import UIKit
 
-public enum ExchangeListFactory {
-    public static func make(
+enum ExchangeListFactory {
+    static func make(
         navigation: Navigating,
         _ container: DependencyInjecting
     ) -> UIViewController {

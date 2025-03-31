@@ -1,17 +1,17 @@
 import UIKit
 
-public final class DefaultDesignSystem: DesignSystem {
-    public func makeLoading() -> LoadingViewDisplaying {
+final class DefaultDesignSystem: DesignSystem {
+    func makeLoading() -> LoadingViewDisplaying {
         LoadingView()
     }
     
-    public func makeExchangeCell(
+    func makeExchangeCell(
         style: UITableViewCell.CellStyle
     ) -> DSExchangeCellDisplaying {
         DSExchangeCell(style: style, reuseIdentifier: nil)
     }
     
-    public func makeErrorView() -> any ErrorViewDisplaying {
+    func makeErrorView() -> any ErrorViewDisplaying {
         ErrorView()
     }
 }

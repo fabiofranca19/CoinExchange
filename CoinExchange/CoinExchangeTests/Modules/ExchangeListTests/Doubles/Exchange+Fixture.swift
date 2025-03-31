@@ -1,7 +1,7 @@
 import XCTest
 @testable import CoinExchange
 
-public extension Exchange {
+extension Exchange {
     static func fixture(
         exchangeId: String = "",
         website: String? = nil,

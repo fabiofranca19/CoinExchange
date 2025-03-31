@@ -1,12 +1,12 @@
 import Foundation
 
-public struct DSExchangeCellDTO: Equatable {
+struct DSExchangeCellDTO: Equatable {
     let iconUrl: String
     let title: String
     let subtitle: String
     let value: String
     
-    public init(
+    init(
         icon: String,
         title: String,
         subtitle: String,

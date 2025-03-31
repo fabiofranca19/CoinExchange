@@ -16,7 +16,7 @@ final class ExchangeDetailCoordinator {
 
 // MARK: - ExchangeDetailCoordinating
 extension ExchangeDetailCoordinator: ExchangeDetailCoordinating {
-    public func popViewController() {
+    func popViewController() {
         navigation.popViewController(animated: true)
     }
 }

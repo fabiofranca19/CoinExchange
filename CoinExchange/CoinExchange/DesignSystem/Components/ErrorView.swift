@@ -1,13 +1,13 @@
 import UIKit
 
-public protocol ErrorViewDisplaying: UIView {
+protocol ErrorViewDisplaying: UIView {
     func showError(message: String, designSystem: DesignSystem?)
     func hideError()
     var onRetry: (() -> Void)? { get set }
 }
 
-public final class ErrorView: UIView {
-    public var onRetry: (() -> Void)?
+final class ErrorView: UIView {
+    var onRetry: (() -> Void)?
     
     private let messageLabel: UILabel = {
         let label = UILabel()
@@ -36,9 +36,8 @@ public final class ErrorView: UIView {
         buildView()
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) { nil }
 
     @objc private func retryTapped() {
         hideError()
@@ -47,12 +46,12 @@ public final class ErrorView: UIView {
 }
 
 extension ErrorView: ViewCode {
-    public func setupHierarchy() {
+    func setupHierarchy() {
         addSubview(retryButton)
         addSubview(messageLabel)
     }
     
-    public func setupConstraints() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
                 messageLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
                 messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: DSSpacing.Default.space3),
@@ -65,7 +64,7 @@ extension ErrorView: ViewCode {
             ])
     }
     
-    public func setupAdditionalConfigurations() {
+    func setupAdditionalConfigurations() {
         backgroundColor = .clear
         retryButton.addTarget(self, action: #selector(retryTapped), for: .touchUpInside)
         isUserInteractionEnabled = true
@@ -73,12 +72,12 @@ extension ErrorView: ViewCode {
 }
 
 extension ErrorView: ErrorViewDisplaying {
-    public func showError(message: String, designSystem: DesignSystem?) {
+    func showError(message: String, designSystem: DesignSystem?) {
         messageLabel.text = message
         isHidden = false
     }
     
-    public func hideError() {
+    func hideError() {
         isHidden = true
     }
 }

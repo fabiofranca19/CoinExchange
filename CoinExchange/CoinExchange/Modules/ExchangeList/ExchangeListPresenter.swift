@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol ExchangeListPresenting: AnyObject {
+protocol ExchangeListPresenting: AnyObject {
     func presentExchanges(exchanges: [Exchange], icons: [String:String])
     func presentLoading()
     func hideLoading()
@@ -9,7 +9,7 @@ public protocol ExchangeListPresenting: AnyObject {
     func goToExchangeDetail(_ exchange: Exchange, iconUrl: String)
 }
 
-public final class ExchangeListPresenter {
+final class ExchangeListPresenter {
     private let coordinator: ExchangeListCoordinating
     weak var controller: ExchangeListDisplaying?
     
@@ -20,7 +20,7 @@ public final class ExchangeListPresenter {
 
 // MARK: - ExchangeListPresenting
 extension ExchangeListPresenter: ExchangeListPresenting {
-    public func presentExchanges(exchanges: [Exchange], icons: [String:String]) {
+    func presentExchanges(exchanges: [Exchange], icons: [String:String]) {
         let exchangesDTO = exchanges.compactMap {
             DSExchangeCellDTO(
                 icon: icons[$0.exchangeId] ?? "",
@@ -32,23 +32,23 @@ extension ExchangeListPresenter: ExchangeListPresenting {
         controller?.displayExchanges(exchangesDTO)
     }
     
-    public func presentLoading() {
+    func presentLoading() {
         controller?.displayLoading()
     }
     
-    public func hideLoading() {
+    func hideLoading() {
         controller?.hideLoading()
     }
     
-    public func presentError(_ message: String) {
+    func presentError(_ message: String) {
         controller?.displayError(message)
     }
     
-    public func hideError() {
+    func hideError() {
         controller?.hideError()
     }
     
-    public func goToExchangeDetail(_ exchange: Exchange, iconUrl: String) {
+    func goToExchangeDetail(_ exchange: Exchange, iconUrl: String) {
         coordinator.goToExchangeDetail(exchange, iconUrl: iconUrl)
     }
 }

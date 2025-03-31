@@ -1,7 +1,7 @@
 import XCTest
 @testable import CoinExchange
 
-public final class DependencyContainerMock: DependencyInjecting {
+final class DependencyContainerMock: DependencyInjecting {
     private var factories: [ObjectIdentifier: () -> Any] = [:]
     
     private let dependencies: [Any]
@@ -15,12 +15,12 @@ public final class DependencyContainerMock: DependencyInjecting {
         ]
     }
     
-    public func register<T>(_ type: T.Type, factory: @escaping () -> T) {
+    func register<T>(_ type: T.Type, factory: @escaping () -> T) {
         let key = ObjectIdentifier(type)
         factories[key] = factory
     }
     
-    public func resolve<T>(_ type: T.Type) -> T {
+    func resolve<T>(_ type: T.Type) -> T {
         let key = ObjectIdentifier(T.self)
         if let factory = factories[key] as? () -> T {
             return factory()

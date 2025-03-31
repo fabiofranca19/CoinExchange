@@ -1,8 +1,8 @@
 import XCTest
 @testable import CoinExchange
 
-public final class ExchangeListViewControllerSpy: UIViewController, ExchangeListDisplaying {
-    public enum Message: AutoEquatable {
+final class ExchangeListViewControllerSpy: UIViewController, ExchangeListDisplaying {
+    enum Message: AutoEquatable {
         case displayExchanges(exchanges: [DSExchangeCellDTO])
         case displayLoading
         case displayError(message: String)
@@ -12,23 +12,23 @@ public final class ExchangeListViewControllerSpy: UIViewController, ExchangeList
     
     private(set) var messages: [Message] = []
     
-    public func displayExchanges(_ exchanges: [DSExchangeCellDTO]) {
+    func displayExchanges(_ exchanges: [DSExchangeCellDTO]) {
         messages.append(.displayExchanges(exchanges: exchanges))
     }
     
-    public func displayLoading() {
+    func displayLoading() {
         messages.append(.displayLoading)
     }
     
-    public func displayError(_ message: String) {
+    func displayError(_ message: String) {
         messages.append(.displayError(message: message))
     }
     
-    public func hideLoading() {
+    func hideLoading() {
         messages.append(.hideLoading)
     }
     
-    public func hideError() {
+    func hideError() {
         messages.append(.hideError)
     }
 }

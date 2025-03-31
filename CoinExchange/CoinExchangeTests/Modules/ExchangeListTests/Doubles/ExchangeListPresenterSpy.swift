@@ -1,8 +1,8 @@
 import XCTest
 @testable import CoinExchange
 
-public final class ExchangeListPresenterSpy: ExchangeListPresenting {
-    public enum Message: AutoEquatable {
+final class ExchangeListPresenterSpy: ExchangeListPresenting {
+    enum Message: AutoEquatable {
         case presentExchanges(exchanges: [Exchange], icons: [String:String])
         case presentLoading
         case hideLoading
@@ -13,27 +13,27 @@ public final class ExchangeListPresenterSpy: ExchangeListPresenting {
 
     private(set) var messages: [Message] = []
     
-    public func presentExchanges(exchanges: [Exchange], icons: [String:String]) {
+    func presentExchanges(exchanges: [Exchange], icons: [String:String]) {
         messages.append(.presentExchanges(exchanges: exchanges, icons: icons))
     }
     
-    public func presentLoading() {
+    func presentLoading() {
         messages.append(.presentLoading)
     }
     
-    public func hideLoading() {
+    func hideLoading() {
         messages.append(.hideLoading)
     }
     
-    public func presentError(_ message: String) {
+    func presentError(_ message: String) {
         messages.append(.presentError(message: message))
     }
     
-    public func hideError() {
+    func hideError() {
         messages.append(.hideError)
     }
     
-    public func goToExchangeDetail(_ exchange: Exchange, iconUrl: String) {
+    func goToExchangeDetail(_ exchange: Exchange, iconUrl: String) {
         messages.append(.goToExchangeDetail(exchange: exchange, iconUrl: iconUrl))
     }
 }

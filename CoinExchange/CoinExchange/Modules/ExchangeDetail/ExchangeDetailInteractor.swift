@@ -42,7 +42,7 @@ final class ExchangeDetailInteractor {
 
 // MARK: - ExchangeDetailInteracting
 extension ExchangeDetailInteractor: ExchangeDetailInteracting {
-    public func loadData() {
+    func loadData() {
         loadIcon()
         presenter.presentExchange(exchange, iconUrl: iconUrl)
     }

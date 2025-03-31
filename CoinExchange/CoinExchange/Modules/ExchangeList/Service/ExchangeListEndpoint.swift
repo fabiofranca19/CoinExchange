@@ -1,14 +1,14 @@
 import Foundation
 
-public enum ExchangeListEndpoint: ApiEndpoint {
+enum ExchangeListEndpoint: ApiEndpoint {
     case exchanges
     case logos
     
-    public var baseURL: URL {
+    var baseURL: URL {
         return URL(string: "https://rest.coinapi.io/v1")!
     }
     
-    public var path: String {
+    var path: String {
         switch self {
         case .exchanges:
             return "/exchanges"
@@ -17,19 +17,19 @@ public enum ExchangeListEndpoint: ApiEndpoint {
         }
     }
     
-    public var httpMethod: HTTPMethod {
+    var httpMethod: HTTPMethod {
         return .get
     }
     
-    public var queryParameters: [String : String]? {
+    var queryParameters: [String : String]? {
         return nil
     }
     
-    public var bodyParametes: [String : Any]? {
+    var bodyParametes: [String : Any]? {
         return nil
     }
     
-    public var headers: [String : String]? {
+    var headers: [String : String]? {
         return ["X-CoinAPI-Key": ConfigService.apiKey]
     }
 }

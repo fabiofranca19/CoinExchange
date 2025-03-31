@@ -1,11 +1,11 @@
 import UIKit
 
-public protocol DSExchangeCellDisplaying: UITableViewCell {
+protocol DSExchangeCellDisplaying: UITableViewCell {
     func updateCell(_ dto: DSExchangeCellDTO)
     func updateImage(_ icon: UIImage?)
 }
 
-public final class DSExchangeCell: UITableViewCell {
+final class DSExchangeCell: UITableViewCell {
     static let identifier = "DSExchangeCellIdentifier"
     
     private let iconImageView: UIImageView = {
@@ -58,20 +58,20 @@ public final class DSExchangeCell: UITableViewCell {
         return view
     }()
     
-    public override func prepareForReuse() {
+    override func prepareForReuse() {
         super.prepareForReuse()
         iconImageView.image = nil
         titleLabel.text = nil
     }
     
-    public override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
+    override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
         let targetHeight = iconImageView.frame.height + DSSpacing.Default.space3 * 2
         return CGSize(width: targetSize.width, height: targetHeight)
     }
 }
 
 extension DSExchangeCell: ViewCode {
-    public func setupHierarchy() {
+    func setupHierarchy() {
         contentView.addSubview(containerView)
         
         containerView.addSubview(iconImageView)
@@ -82,7 +82,7 @@ extension DSExchangeCell: ViewCode {
         textStackView.addArrangedSubview(subtitleLabel)
     }
     
-    public func setupConstraints() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: DSSpacing.Default.space3),
@@ -103,14 +103,14 @@ extension DSExchangeCell: ViewCode {
         ])
     }
     
-    public func setupAdditionalConfigurations() {
+    func setupAdditionalConfigurations() {
         contentView.backgroundColor = DSColorPalette.Default.background
         containerView.layer.masksToBounds = true
     }
 }
 
 extension DSExchangeCell: DSExchangeCellDisplaying {
-    public func updateCell(_ dto: DSExchangeCellDTO) {
+    func updateCell(_ dto: DSExchangeCellDTO) {
         titleLabel.text = dto.title
         subtitleLabel.text = dto.subtitle
         valueLabel.text = dto.value
@@ -118,7 +118,7 @@ extension DSExchangeCell: DSExchangeCellDisplaying {
         buildView()
     }
     
-    public func updateImage(_ icon: UIImage?) {
+    func updateImage(_ icon: UIImage?) {
         DispatchQueue.main.async { [weak self] in
             self?.iconImageView.image = icon
         }

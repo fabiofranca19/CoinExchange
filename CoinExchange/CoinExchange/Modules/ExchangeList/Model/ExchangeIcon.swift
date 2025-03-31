@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ExchangeIcon: Codable {
+struct ExchangeIcon: Codable {
     let exchangeId: String
     let url: String
     

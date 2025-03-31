@@ -1,14 +1,14 @@
 import XCTest
 @testable import CoinExchange
 
-public final class ExchangeDetailCoordinatorSpy: ExchangeDetailCoordinating {
-    public enum Message: AutoEquatable {
+final class ExchangeDetailCoordinatorSpy: ExchangeDetailCoordinating {
+    enum Message: AutoEquatable {
         case popViewController
     }
 
     private(set) var messages: [Message] = []
     
-    public func popViewController() {
+    func popViewController() {
         messages.append(.popViewController)
     }
 }

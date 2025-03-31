@@ -1,9 +1,9 @@
 import XCTest
 @testable import CoinExchange
 
-public protocol AutoEquatable: Equatable { }
+protocol AutoEquatable: Equatable { }
 
-public extension AutoEquatable {
+extension AutoEquatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         var lhsDump = String()
         dump(lhs, to: &lhsDump)

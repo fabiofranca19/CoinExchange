@@ -1,7 +1,7 @@
 import XCTest
 @testable import CoinExchange
 
-public extension DSExchangeCellDTO {
+extension DSExchangeCellDTO {
     static func fixture(
         icon: String = "",
         title: String = "",

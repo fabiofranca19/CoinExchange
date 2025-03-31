@@ -1,7 +1,7 @@
 import XCTest
 @testable import CoinExchange
 
-public extension DSExchangeDetailDTO {
+extension DSExchangeDetailDTO {
     static func fixture(
         name: String = "",
         website: String? = nil,

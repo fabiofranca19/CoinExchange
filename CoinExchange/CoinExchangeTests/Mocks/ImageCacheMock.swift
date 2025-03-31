@@ -2,7 +2,7 @@ import UIKit
 @testable import CoinExchange
 
 final class ImageCacheMock: ImageCaching {
-    public enum Message: AutoEquatable {
+    enum Message: AutoEquatable {
         case getImage(url: URL)
         case setImage(image: UIImage, url: URL)
     }

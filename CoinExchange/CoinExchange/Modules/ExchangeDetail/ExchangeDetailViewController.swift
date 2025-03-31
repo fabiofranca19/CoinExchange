@@ -5,7 +5,7 @@ protocol ExchangeDetailDisplaying: AnyObject {
     func displayDetailIcon(_ icon: UIImage)
 }
 
-public struct DSExchangeDetailDTO {
+struct DSExchangeDetailDTO {
     let name: String
     let website: String?
     let exchangeId: String
@@ -21,7 +21,7 @@ public struct DSExchangeDetailDTO {
     let iconUrl: String?
 }
 
-final class ExchangeDetailViewController: BaseViewController<ExchangeDetailInteracting> {
+class ExchangeDetailViewController: BaseViewController<ExchangeDetailInteracting> {
     private var exchangeDetail: DSExchangeDetailDTO?
     
     private lazy var headerView: UIView = {
@@ -152,7 +152,7 @@ final class ExchangeDetailViewController: BaseViewController<ExchangeDetailInter
 
 // MARK: - ExchangeDetailDisplaying
 extension ExchangeDetailViewController: ExchangeDetailDisplaying {
-    public func displayDetail(_ detail: DSExchangeDetailDTO) {
+    func displayDetail(_ detail: DSExchangeDetailDTO) {
         DispatchQueue.main.async { [weak self] in
             self?.exchangeDetail = detail
             self?.updateUI(with: detail)

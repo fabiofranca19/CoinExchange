@@ -1,11 +1,11 @@
 import UIKit
 
-public protocol ImageLoading: AnyObject {
+protocol ImageLoading: AnyObject {
     func loadImage(from urlString: String, cache: ImageCaching, completion: @escaping (UIImage?) -> Void)
     func cancelLoad(for urlString: String)
 }
 
-class ImageLoader: ImageLoading {
+final class ImageLoader: ImageLoading {
     private var runningTasks = [String: URLSessionDataTask]()
     
     func loadImage(from urlString: String, cache: ImageCaching, completion: @escaping (UIImage?) -> Void) {

@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-public extension XCTestCase {
+extension XCTestCase {
     /// Assert that SUT and Test Doubles have been deallocated from memory.
     /// This helps identify potential memory leaks.
     func assertDeallocated<T>(_ sut: inout T,

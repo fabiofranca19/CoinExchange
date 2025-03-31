@@ -1,11 +1,11 @@
 import Foundation
 
-public protocol ExchangeListInteracting: AnyObject {
+protocol ExchangeListInteracting: AnyObject {
     func loadData()
     func cellTapped(at index: Int)
 }
 
-public final class ExchangeListInteractor {
+final class ExchangeListInteractor {
     private let presenter: ExchangeListPresenting
     private let service: ExchangeListServicing
     private let container: DependencyInjecting
@@ -38,7 +38,7 @@ public final class ExchangeListInteractor {
 
 // MARK: - ExchangeListInteracting
 extension ExchangeListInteractor: ExchangeListInteracting {
-    public func loadData() {
+    func loadData() {
         presenter.presentLoading()
         presenter.hideError()
         let dispatchGroup = DispatchGroup()
@@ -82,7 +82,7 @@ extension ExchangeListInteractor: ExchangeListInteracting {
         }
     }
     
-    public func cellTapped(at index: Int) {
+    func cellTapped(at index: Int) {
         let exchange = exchanges[index]
         let iconUrl = exchangesIcons[exchange.exchangeId] ?? ""
         presenter.goToExchangeDetail(exchange, iconUrl: iconUrl)
