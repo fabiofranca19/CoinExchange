@@ -19,7 +19,7 @@ public final class DSExchangeCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = DSTypography.Default.caption
-        label.textColor = DSColorPalette.Dark.textSecondary
+        label.textColor = DSColorPalette.Default.textSecondary
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -27,7 +27,7 @@ public final class DSExchangeCell: UITableViewCell {
     private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.font = DSTypography.Default.body
-        label.textColor = DSColorPalette.Dark.textPrimary
+        label.textColor = DSColorPalette.Default.textPrimary
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -35,7 +35,7 @@ public final class DSExchangeCell: UITableViewCell {
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = DSTypography.Default.caption
-        label.textColor = DSColorPalette.Dark.textPrimary
+        label.textColor = DSColorPalette.Default.textPrimary
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
         return label
@@ -51,7 +51,7 @@ public final class DSExchangeCell: UITableViewCell {
     
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = DSColorPalette.Dark.primary
+        view.backgroundColor = DSColorPalette.Default.primary
         view.layer.cornerRadius = DSSpacing.Default.space2
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -104,7 +104,7 @@ extension DSExchangeCell: ViewCode {
     }
     
     public func setupAdditionalConfigurations() {
-        contentView.backgroundColor = DSColorPalette.Dark.background
+        contentView.backgroundColor = DSColorPalette.Default.background
         containerView.layer.masksToBounds = true
     }
 }

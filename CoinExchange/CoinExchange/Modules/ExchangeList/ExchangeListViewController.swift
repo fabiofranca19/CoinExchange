@@ -20,8 +20,7 @@ public final class ExchangeListViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = DSTypography.Default.title
         label.text = "Exchange List"
-        label.textColor = DSColorPalette.Dark.textPrimary
-        label.accessibilityIdentifier = "exchangeListTitleLabel"
+        label.textColor = DSColorPalette.Default.textPrimary
         return label
     }()
 
@@ -31,14 +30,12 @@ public final class ExchangeListViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.isUserInteractionEnabled = true
         tableView.register(DSExchangeCell.self, forCellReuseIdentifier: DSExchangeCell.identifier)
-        tableView.accessibilityIdentifier = "exchangeListTableView"
         return tableView
     }()
 
     private lazy var loadingView: LoadingViewDisplaying = {
         let loadingView = designSystem.makeLoading()
         loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.accessibilityIdentifier = "exchangeListLoadingView"
         return loadingView
     }()
 
@@ -48,7 +45,6 @@ public final class ExchangeListViewController: UIViewController {
         errorView.onRetry = { [weak self] in
             self?.interactor.loadData()
         }
-        errorView.accessibilityIdentifier = "exchangeListErrorView"
         return errorView
     }()
     
@@ -76,6 +72,7 @@ public final class ExchangeListViewController: UIViewController {
     }
 }
 
+// MARK: - ExchangeListDisplaying
 extension ExchangeListViewController: ExchangeListDisplaying {
     public func displayExchanges(_ exchanges: [DSExchangeCellDTO]) {
         DispatchQueue.main.async { [weak self] in
@@ -102,6 +99,7 @@ extension ExchangeListViewController: ExchangeListDisplaying {
     }
 }
 
+// MARK: - UITableViewDataSource & UITableViewDelegate
 extension ExchangeListViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exchangesCells.count
@@ -168,7 +166,7 @@ extension ExchangeListViewController: ViewCode {
     }
     
     public func setupAdditionalConfigurations() {
-        view.backgroundColor = DSColorPalette.Dark.background
+        view.backgroundColor = DSColorPalette.Default.background
     
         tableView.dataSource = self
         tableView.delegate = self

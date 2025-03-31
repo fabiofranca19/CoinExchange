@@ -2,6 +2,7 @@ import UIKit
 
 protocol ExchangeDetailDisplaying: AnyObject {
     func displayDetail(_ detail: DSExchangeDetailDTO)
+    func displayDetailIcon(_ icon: UIImage)
 }
 
 public struct DSExchangeDetailDTO {
@@ -20,18 +21,13 @@ public struct DSExchangeDetailDTO {
     let iconUrl: String?
 }
 
-final class ExchangeDetailViewController: UIViewController {
-    private let interactor: ExchangeDetailInteracting
-    private let designSystem: DesignSystem
-    private let imageLoader: ImageLoading
-    private let imageCache: ImageCaching
+final class ExchangeDetailViewController: BaseViewController<ExchangeDetailInteracting> {
     private var exchangeDetail: DSExchangeDetailDTO?
     
-    // Componentes da UI
     private lazy var headerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = DSColorPalette.Dark.primary.withAlphaComponent(0.9)
+        view.backgroundColor = DSColorPalette.Default.primary.withAlphaComponent(0.9)
         view.layer.cornerRadius = DSSpacing.Default.space3
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.2
@@ -46,7 +42,7 @@ final class ExchangeDetailViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = DSSizes.Default.largeIcon / 2
         imageView.clipsToBounds = true
-        imageView.backgroundColor = DSColorPalette.Dark.background
+        imageView.backgroundColor = DSColorPalette.Default.background
         return imageView
     }()
     
@@ -54,7 +50,7 @@ final class ExchangeDetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = DSTypography.Default.title
-        label.textColor = DSColorPalette.Dark.textPrimary
+        label.textColor = DSColorPalette.Default.textPrimary
         label.numberOfLines = .zero
         label.textAlignment = .center
         return label
@@ -63,7 +59,7 @@ final class ExchangeDetailViewController: UIViewController {
     private lazy var detailsContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = DSColorPalette.Dark.background.withAlphaComponent(0.95)
+        view.backgroundColor = DSColorPalette.Default.background.withAlphaComponent(0.95)
         view.layer.cornerRadius = 12
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.1
@@ -84,8 +80,8 @@ final class ExchangeDetailViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = DSTypography.Default.body
-        button.setTitleColor(DSColorPalette.Dark.textPrimary, for: .normal)
-        button.backgroundColor = DSColorPalette.Dark.primary
+        button.setTitleColor(DSColorPalette.Default.textPrimary, for: .normal)
+        button.backgroundColor = DSColorPalette.Default.primary
         button.layer.cornerRadius = DSSpacing.Default.space1
         button.addTarget(self, action: #selector(openWebsite), for: .touchUpInside)
         button.layer.shadowColor = UIColor.black.cgColor
@@ -95,27 +91,9 @@ final class ExchangeDetailViewController: UIViewController {
         return button
     }()
     
-    init(
-        interactor: ExchangeDetailInteracting,
-        designSystem: DesignSystem,
-        imageLoader: ImageLoading,
-        imageCache: ImageCaching
-    ) {
-        self.interactor = interactor
-        self.designSystem = designSystem
-        self.imageLoader = imageLoader
-        self.imageCache = imageCache
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor.loadData()
-        buildView()
         detailsContainer.alpha = 0
         websiteButton.alpha = 0
     }
@@ -124,22 +102,8 @@ final class ExchangeDetailViewController: UIViewController {
         guard let website = exchangeDetail?.website, let url = URL(string: website) else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
-}
-
-// MARK: - ExchangeDetailDisplaying
-extension ExchangeDetailViewController: ExchangeDetailDisplaying {
-    public func displayDetail(_ detail: DSExchangeDetailDTO) {
-        DispatchQueue.main.async { [weak self] in
-            self?.exchangeDetail = detail
-            self?.updateUI(with: detail)
-            self?.animateUI()
-        }
-    }
-}
-
-// MARK: - ViewCode
-extension ExchangeDetailViewController: ViewCode {
-    public func setupHierarchy() {
+    
+    override func setupHierarchy() {
         view.addSubview(headerView)
         headerView.addSubview(logoImageView)
         headerView.addSubview(titleLabel)
@@ -148,7 +112,7 @@ extension ExchangeDetailViewController: ViewCode {
         view.addSubview(websiteButton)
     }
     
-    public func setupConstraints() {
+    override func setupConstraints() {
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: DSSpacing.Default.space3),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: DSSpacing.Default.space3),
@@ -181,8 +145,25 @@ extension ExchangeDetailViewController: ViewCode {
         ])
     }
     
-    public func setupAdditionalConfigurations() {
-        view.backgroundColor = DSColorPalette.Dark.background
+    override func setupAdditionalConfigurations() {
+        view.backgroundColor = DSColorPalette.Default.background
+    }
+}
+
+// MARK: - ExchangeDetailDisplaying
+extension ExchangeDetailViewController: ExchangeDetailDisplaying {
+    public func displayDetail(_ detail: DSExchangeDetailDTO) {
+        DispatchQueue.main.async { [weak self] in
+            self?.exchangeDetail = detail
+            self?.updateUI(with: detail)
+            self?.animateUI()
+        }
+    }
+    
+    func displayDetailIcon(_ icon: UIImage) {
+        DispatchQueue.main.async { [weak self] in
+            self?.logoImageView.image = icon
+        }
     }
 }
 
@@ -190,12 +171,6 @@ extension ExchangeDetailViewController: ViewCode {
 private extension ExchangeDetailViewController {
     func updateUI(with detail: DSExchangeDetailDTO) {
         titleLabel.text = detail.name
-        
-        if let iconUrl = detail.iconUrl {
-            imageLoader.loadImage(from: iconUrl, cache: imageCache) { [weak self] image in
-                self?.logoImageView.image = image
-            }
-        }
         
         detailsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         addDetailRow(title: "Exchange ID", value: detail.exchangeId)
@@ -225,13 +200,13 @@ private extension ExchangeDetailViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = DSTypography.Default.body
-        label.textColor = DSColorPalette.Dark.textSecondary
+        label.textColor = DSColorPalette.Default.textSecondary
         label.text = "\(title): "
         
         let valueLabel = UILabel()
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.font = DSTypography.Default.body
-        valueLabel.textColor = DSColorPalette.Dark.textPrimary
+        valueLabel.textColor = DSColorPalette.Default.textPrimary
         valueLabel.text = value
         valueLabel.numberOfLines = .zero
         

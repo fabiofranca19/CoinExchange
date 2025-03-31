@@ -1,5 +1,8 @@
+import UIKit
+
 protocol ExchangeDetailPresenting: AnyObject {
     func presentExchange(_ exchange: Exchange, iconUrl: String)
+    func presentExchangeIcon(_ icon: UIImage)
 }
 
 final class ExchangeDetailPresenter {
@@ -31,5 +34,9 @@ extension ExchangeDetailPresenter: ExchangeDetailPresenting {
         )
         
         controller?.displayDetail(dto)
+    }
+    
+    func presentExchangeIcon(_ icon: UIImage) {
+        controller?.displayDetailIcon(icon)
     }
 }

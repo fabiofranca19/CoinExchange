@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E08C0FD2D99D04500EB02CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E08C0FC2D99D03D00EB02CE /* BaseViewController.swift */; };
 		9E72FF112D6AA6D60080CA74 /* ExchangeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF102D6AA6D50080CA74 /* ExchangeIcon.swift */; };
 		9E72FF1B2D6B61B90080CA74 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF1A2D6B61B30080CA74 /* DesignSystem.swift */; };
 		9E72FF1E2D6B62740080CA74 /* DSColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72FF1D2D6B626C0080CA74 /* DSColorPalette.swift */; };
@@ -23,8 +24,6 @@
 		E63E4B0C2D6A67290071E888 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B0B2D6A67290071E888 /* SceneDelegate.swift */; };
 		E63E4B132D6A672A0071E888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63E4B122D6A672A0071E888 /* Assets.xcassets */; };
 		E63E4B162D6A672A0071E888 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E63E4B152D6A672A0071E888 /* Base */; };
-		E63E4B2B2D6A672A0071E888 /* ExchangeListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B2A2D6A672A0071E888 /* ExchangeListUITests.swift */; };
-		E63E4B2D2D6A672A0071E888 /* ExchangeLauchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B2C2D6A672A0071E888 /* ExchangeLauchUITests.swift */; };
 		E63E4B3B2D6A69B60071E888 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B3A2D6A69B60071E888 /* AppCoordinator.swift */; };
 		E63E4B412D6A7BB10071E888 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B402D6A7BB10071E888 /* DependencyContainer.swift */; };
 		E63E4B442D6A7CFE0071E888 /* Servicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E4B432D6A7CFE0071E888 /* Servicing.swift */; };
@@ -97,6 +96,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E08C0FC2D99D03D00EB02CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9E72FF102D6AA6D50080CA74 /* ExchangeIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeIcon.swift; sourceTree = "<group>"; };
 		9E72FF1A2D6B61B30080CA74 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		9E72FF1D2D6B626C0080CA74 /* DSColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColorPalette.swift; sourceTree = "<group>"; };
@@ -117,8 +117,6 @@
 		E63E4B172D6A672A0071E888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E63E4B1C2D6A672A0071E888 /* CoinExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63E4B262D6A672A0071E888 /* CoinExchangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinExchangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E63E4B2A2D6A672A0071E888 /* ExchangeListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListUITests.swift; sourceTree = "<group>"; };
-		E63E4B2C2D6A672A0071E888 /* ExchangeLauchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeLauchUITests.swift; sourceTree = "<group>"; };
 		E63E4B3A2D6A69B60071E888 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E63E4B402D6A7BB10071E888 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		E63E4B432D6A7CFE0071E888 /* Servicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicing.swift; sourceTree = "<group>"; };
@@ -232,6 +230,7 @@
 		9E72FF2A2D6BF35D0080CA74 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9E08C0FC2D99D03D00EB02CE /* BaseViewController.swift */,
 				9E72FF392D6D31770080CA74 /* Cache */,
 				9E72FF2B2D6BF36B0080CA74 /* Extensions */,
 				E63E4B642D6CA17D0071E888 /* ViewCode.swift */,
@@ -264,7 +263,6 @@
 				E6D0F3872D6DB41C001C1018 /* ExchangeListDisplaying.swift */,
 				E63E4B082D6A67290071E888 /* CoinExchange */,
 				E63E4B1F2D6A672A0071E888 /* CoinExchangeTests */,
-				E63E4B292D6A672A0071E888 /* CoinExchangeUITests */,
 				E63E4B072D6A67290071E888 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -304,15 +302,6 @@
 				E6D0F3572D6D7C2D001C1018 /* Modules */,
 			);
 			path = CoinExchangeTests;
-			sourceTree = "<group>";
-		};
-		E63E4B292D6A672A0071E888 /* CoinExchangeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E63E4B2A2D6A672A0071E888 /* ExchangeListUITests.swift */,
-				E63E4B2C2D6A672A0071E888 /* ExchangeLauchUITests.swift */,
-			);
-			path = CoinExchangeUITests;
 			sourceTree = "<group>";
 		};
 		E63E4B392D6A68DE0071E888 /* SupportingFiles */ = {
@@ -647,6 +636,7 @@
 				E63E4B532D6A8B2B0071E888 /* ExchangeListViewController.swift in Sources */,
 				E6D0F3A02D6E3399001C1018 /* ConfigService.swift in Sources */,
 				E63E4B652D6CA17D0071E888 /* ViewCode.swift in Sources */,
+				9E08C0FD2D99D04500EB02CE /* BaseViewController.swift in Sources */,
 				9E72FF3D2D6D31D70080CA74 /* ImageLoader.swift in Sources */,
 				E63E4B492D6A85800071E888 /* Service.swift in Sources */,
 				9E72FF2F2D6BFA900080CA74 /* DarkDesignSystem.swift in Sources */,
@@ -722,8 +712,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E63E4B2D2D6A672A0071E888 /* ExchangeLauchUITests.swift in Sources */,
-				E63E4B2B2D6A672A0071E888 /* ExchangeListUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,7 +868,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y72HNGSH66;
+				DEVELOPMENT_TEAM = DRP2X5MTUR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoinExchange/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -911,7 +899,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y72HNGSH66;
+				DEVELOPMENT_TEAM = DRP2X5MTUR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoinExchange/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

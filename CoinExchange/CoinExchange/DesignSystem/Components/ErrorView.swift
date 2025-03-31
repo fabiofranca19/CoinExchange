@@ -11,8 +11,8 @@ public final class ErrorView: UIView {
     
     private let messageLabel: UILabel = {
         let label = UILabel()
-        label.textColor = DSColorPalette.Dark.textPrimary
-        label.backgroundColor = DSColorPalette.Dark.errorBackground
+        label.textColor = DSColorPalette.Default.textPrimary
+        label.backgroundColor = DSColorPalette.Default.errorBackground
         label.textAlignment = .center
         label.numberOfLines = .zero
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,8 +24,8 @@ public final class ErrorView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Tentar novamente", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = DSColorPalette.Dark.primary
-        button.tintColor = DSColorPalette.Dark.textPrimary
+        button.backgroundColor = DSColorPalette.Default.primary
+        button.tintColor = DSColorPalette.Default.textPrimary
         button.isUserInteractionEnabled = true
         button.isEnabled = true
         return button

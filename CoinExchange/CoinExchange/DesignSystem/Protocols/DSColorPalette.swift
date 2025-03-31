@@ -1,7 +1,7 @@
 import UIKit
 
 public enum DSColorPalette {
-    public enum Dark {
+    public enum Default {
         public static let primary = UIColor(hex: "#323232")
         public static let background = UIColor(hex: "#161616")
         public static let textPrimary = UIColor.white

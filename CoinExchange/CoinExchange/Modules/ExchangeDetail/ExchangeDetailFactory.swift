@@ -8,10 +8,7 @@ enum ExchangeDetailFactory {
         _ iconUrl: String
     ) -> UIViewController {
         let designSystem = container.resolve(DesignSystem.self)
-        let imageLoader = container.resolve(ImageLoading.self)
-        let imageCache = container.resolve(ImageCaching.self)
         
-        let container = DependencyContainer()
         let service = ExchangeDetailService(
             container: container
         )
@@ -31,9 +28,7 @@ enum ExchangeDetailFactory {
         )
         let viewController = ExchangeDetailViewController(
             interactor: interactor,
-            designSystem: designSystem,
-            imageLoader: imageLoader,
-            imageCache: imageCache
+            designSystem: designSystem
         )
 
         presenter.controller = viewController
