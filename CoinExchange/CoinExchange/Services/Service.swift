@@ -1,9 +1,20 @@
 import Foundation
 
+protocol URLSessioning {
+    func dataTask(
+        with request: URLRequest,
+        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+    ) -> URLSessionDataTasking
+}
+
+protocol URLSessionDataTasking {
+    func resume()
+}
+
 final class Service: Servicing {
-    private let urlSession: URLSession
+    private let urlSession: URLSessioning
     
-    init(urlSession: URLSession = .shared) {
+    init(urlSession: URLSessioning = URLSession.shared) {
         self.urlSession = urlSession
     }
     
@@ -15,22 +26,18 @@ final class Service: Servicing {
             url: endpoint.baseURL.appendingPathComponent(endpoint.path),
             resolvingAgainstBaseURL: false
         ) else {
-            completion(.failure(
-                NSError(domain: "Erro na URL", code: 0, userInfo: nil))
-            )
+            completion(.failure(NSError(domain: "Erro na URL", code: 0, userInfo: nil)))
             return
         }
         
         if let queryParameters = endpoint.queryParameters {
-            urlComponents.queryItems = queryParameters.map { 
+            urlComponents.queryItems = queryParameters.map {
                 URLQueryItem(name: $0.key, value: $0.value)
             }
         }
         
         guard let url = urlComponents.url else {
-            completion(.failure(
-                NSError(domain: "Erro na URL", code: 0, userInfo: nil))
-            )
+            completion(.failure(NSError(domain: "Erro na URL", code: 0, userInfo: nil)))
             return
         }
         

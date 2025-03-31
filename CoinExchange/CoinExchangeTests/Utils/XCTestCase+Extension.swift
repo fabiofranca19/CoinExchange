@@ -1,6 +1,7 @@
 import Foundation
 import XCTest
 
+// TODO: Essa classe foi adicionada para resolver possíveis problemas de memory leaks
 extension XCTestCase {
     /// Assert that SUT and Test Doubles have been deallocated from memory.
     /// This helps identify potential memory leaks.

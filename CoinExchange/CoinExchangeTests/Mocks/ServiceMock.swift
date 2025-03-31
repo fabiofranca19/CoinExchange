@@ -5,32 +5,6 @@ enum MockError: Error {
     case generic
 }
 
-enum MockEndpoint: ApiEndpoint {
-    var baseURL: URL {
-        return URL(string: "https://mock-base-url.com")!
-    }
-    
-    var path: String {
-        return "/mock-path"
-    }
-    
-    var httpMethod: HTTPMethod {
-        return .get
-    }
-    
-    var queryParameters: [String: String]? {
-        return ["mockKey": "mockValue"]
-    }
-    
-    var bodyParametes: [String: Any]? {
-        return ["mockParam": "mockData"]
-    }
-    
-    var headers: [String: String]? {
-        return ["Authorization": "Bearer mockToken"]
-    }
-}
-
 final class ServiceMock: Servicing {
     enum Message: AutoEquatable {
         case execute(expectedEndpoint: ApiEndpoint)
